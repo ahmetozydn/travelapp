@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoginDemo</string>
+    <string name ="Log_In" >Log In</string>
+    <string name ="Did_you_Forget_the_Password" >Forget Password?</string>
+    <string name ="Sign_Up" >Sign Up</string>
+    <string name ="password" >Password</string>
+    <string name ="E_mail" >E-mail</string>
+
+
+</resources>
+
