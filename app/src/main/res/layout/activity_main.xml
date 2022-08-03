@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_background"
-        android:drawableLeft="@drawable/mail_icon"
+        android:drawableLeft="@drawable/account_name_icon"
         android:ems="10"
         android:hint="@string/E_mail"
         android:inputType="textEmailAddress"

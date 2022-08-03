@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import com.ahmetozaydin.logindemo.databinding.ActivityMainBinding
 
- private var accountName : String? = null
-  private var password : String? = null
-
+private var accountName : String? = null
+private var password : String? = null
 
 class MainActivity : AppCompatActivity() {
+
+
+
     lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +27,12 @@ class MainActivity : AppCompatActivity() {
             accountName = binding.editTextAccountName.text.toString()
             password = binding.editTextPassword.text.toString()
 
-            if(accountName != null && password != null){//no box is empty// bu if else yapısını kuramadım buraya tekrar bakılacak
+            /*if(accountName == null || password == null){//no box is empty// bu if else yapısını kuramadım buraya tekrar bakılacak
                     //use Firebase to control the inputs
             }else{//if one of the box is empty
-                Toast.makeText(applicationContext,"Kutucuklar boş bırakılamaz!",Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext,"Boxes cannot be left blank!",Toast.LENGTH_LONG).show()
+            }*/
 
-
-            }
             val intent = Intent(this@MainActivity,MainScreenActivity::class.java)
             startActivity(intent)
             finish()

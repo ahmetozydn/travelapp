@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
         <item android:title ="@string/home_button"
             android:icon="@drawable/vector_home"
             android:id="@+id/home" />
@@ -8,9 +9,9 @@
                 android:icon="@drawable/vector_favorites"
                 android:id="@+id/favorites"/>
 
-        <item android:title="@string/lateinitialize_button"
-                android:icon="@drawable/vector_lateinit"
-                android:id="@+id/lateinit"/>
+        <item android:title="@string/location_button"
+                android:icon="@drawable/vector_location"
+                android:id="@+id/location"/>
 
         <item android:title="@string/menu_button"
                 android:icon="@drawable/vector_menu"

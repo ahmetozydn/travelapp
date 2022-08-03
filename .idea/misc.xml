@@ -3,17 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/account_name_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button_background.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button_background_low_radius.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/edit_text_background.xml" value="0.1785" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.132" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/login_vector_asset.xml" value="0.1785" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/mail_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/password_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/plain_text_background.xml" value="0.132" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_favorites.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_home.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_lateinit.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_location.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_search.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main.xml" value="0.2857142857142857" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main_screen.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main_screen.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_favorites.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_home.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_location.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1745" />
       </map>
@@ -24,5 +37,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -5,12 +5,16 @@
     <string name="Sign_Up">Sign Up</string>
     <string name="password">Password</string>
     <string name="E_mail">E-mail</string>
-    
+
     <!-- Main screen strings-->
-    <string name="home_button">Home</string>   
+    <string name="home_button">Home</string>
     <string name="favorites_button">Favorites</string>
     <string name="menu_button">Menu</string>
-    <string name="lateinitialize_button">Empty</string>
+    <string name="location_button">Location</string>
+    <string name="string_button">Button</string>
+    <string name="search_button">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
 
