@@ -66,7 +66,7 @@
         android:background="#C32C2C"
         android:backgroundTint="#db402c"
         android:drawableLeft="@drawable/ic_baseline_login_24"
-
+        android:alpha="08"
 
         android:shadowColor="#000000"
         android:text="@string/Log_In"
