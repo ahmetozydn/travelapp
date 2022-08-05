@@ -15,7 +15,6 @@ class MainScreenActivity : AppCompatActivity() {
     private val locationFragment = LocationFragment()
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
@@ -25,7 +24,7 @@ class MainScreenActivity : AppCompatActivity() {
 
 
         binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.home -> makeCurrentFragment(homeFragment)
                 R.id.location -> makeCurrentFragment(locationFragment)
                 R.id.favorites -> makeCurrentFragment(favoritesFragment)
@@ -35,13 +34,11 @@ class MainScreenActivity : AppCompatActivity() {
         }
 
     }
-    private fun makeCurrentFragment(fragment: Fragment){
+
+    private fun makeCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.frameLayout,fragment)
+            replace(R.id.frameLayout, fragment)
             commit()
         }
-
     }
-
-
 }

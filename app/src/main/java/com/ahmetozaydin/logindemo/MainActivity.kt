@@ -10,11 +10,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,53 +22,60 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         auth = Firebase.auth
 
+        var accountName: String?
+        var password: String?
+
         val currentUser = auth.currentUser
-        if(currentUser != null){
-            val intent = Intent(this,MainScreenActivity::class.java)
+        if (currentUser != null) {
+            val intent = Intent(this, MainScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
 
 
         binding.logInButton.setOnClickListener {
-            val accountName = binding.editTextAccountName.text.toString()
-            val password = binding.editTextPassword.text.toString()
+            accountName = binding.editTextAccountName.text.toString()
+            password = binding.editTextPassword.text.toString()
             if (accountName == "" || password == "") {
-                Toast.makeText(applicationContext, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
-                    .show()
+                Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG).show()
             } else {
-                auth.signInWithEmailAndPassword(accountName,password).addOnSuccessListener{
-                    val intent = Intent(this@MainActivity,MainScreenActivity::class.java)
+                auth.signInWithEmailAndPassword(accountName!!, password!!).addOnSuccessListener {
+                    val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
                     startActivity(intent)
                     finish()
-                }.addOnFailureListener{
-                    Toast.makeText(this@MainActivity,it.localizedMessage,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity,"Login is successful",Toast.LENGTH_LONG).show()
+
+                }.addOnFailureListener {
+                    Toast.makeText(this@MainActivity, it.localizedMessage, Toast.LENGTH_SHORT)
+                        .show()
                 }
 
-                val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
 
+            }
 
         }
 
         binding.signUpButton.setOnClickListener {
-            val accountName = binding.editTextAccountName.text.toString()
-            val password = binding.editTextPassword.text.toString()
+            accountName = binding.editTextAccountName.text.toString()
+            password = binding.editTextPassword.text.toString()
             if (accountName == "" || password == "") {
-                Toast.makeText(applicationContext, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
+                Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
                     .show()
 
+
             } else {
-                auth.createUserWithEmailAndPassword(accountName, password)
+                auth.createUserWithEmailAndPassword(accountName!!, password!!)
                     .addOnSuccessListener {
-                        val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
+
+                        Toast.makeText(this@MainActivity,"The user has been Created successfully",Toast.LENGTH_SHORT).show()
+                        intent = Intent(this@MainActivity,MainScreenActivity::class.java)
                         startActivity(intent)
                         finish()
+
                     }.addOnFailureListener {
                         Toast.makeText(this@MainActivity, it.localizedMessage, Toast.LENGTH_LONG)
                             .show()
+
                     }
             }
         }

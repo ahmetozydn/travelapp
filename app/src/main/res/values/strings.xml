@@ -16,5 +16,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <string name="settings_button">Settings</string>
+    <string name="log_out_button">Log out</string>
+    <string name="sign_in_button">Sign in</string>
+    <string name="share_the_app_button">Share the app</string>
+    <string name="change_the_language_button">Change The Language</string>
+    <string name="about_us_button">About us</string>
+
+    <string name="buses_button">Buses</string>
+    <string name="stations_button">Stations</string>
+    <string name="balance_query_button">Balance Query</string>
+    <string name="dealers_button">Dealers</string>
+
 </resources>
 
