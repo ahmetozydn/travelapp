@@ -12,13 +12,15 @@ import com.ahmetozaydin.logindemo.databinding.FragmentLocationBinding
 
 
 
-private lateinit var locationManager: LocationManager
-private lateinit var locationListener: LocationListener
-//private lateinit var mMap:GoogleMap
-private lateinit var binding:FragmentLocationBinding//binding nasıl kullanılır fragmentlarda
+
 
 
 class LocationFragment : Fragment() {
+    private lateinit var locationManager: LocationManager
+    private lateinit var locationListener: LocationListener
+    //private lateinit var mMap:GoogleMap
+    private lateinit var binding:FragmentLocationBinding//binding nasıl kullanılır fragmentlarda
+
 
     /*private val callback = OnMapReadyCallback { googleMap ->
     mMap = googleMap
@@ -30,6 +32,7 @@ class LocationFragment : Fragment() {
         googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,15f))
     }*/
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

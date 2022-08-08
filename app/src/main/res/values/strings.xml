@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">LoginDemo</string>
-    <string name="Log_In">Log In</string>
+    <string name="Log_In">&#160;&#160;&#160;&#160;&#160;&#160;Login</string>
     <string name="Did_you_Forget_the_Password">Forget Password?</string>
     <string name="Sign_Up">Sign Up</string>
-    <string name="password">Password</string>
-    <string name="E_mail">E-mail</string>
+    <string name="password">&#160;Password</string>
+    <string name="E_mail">&#160;E-mail</string>
 
     <!-- Main screen strings-->
     <string name="home_button">Home</string>
@@ -12,22 +12,29 @@
     <string name="menu_button">Menu</string>
     <string name="location_button">Location</string>
     <string name="string_button">Button</string>
-    <string name="search_button">Search</string>
+    <string name="search_button">&#160;Search</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <string name="settings_button">Settings</string>
     <string name="log_out_button">Log out</string>
+    <string name="log_in_button">Login</string>
     <string name="sign_in_button">Sign in</string>
-    <string name="share_the_app_button">Share the app</string>
-    <string name="change_the_language_button">Change The Language</string>
-    <string name="about_us_button">About us</string>
-
+    <string name="share_the_app_button">Share the App</string>
+    <string name="change_the_language_button">Change the Language</string>
+    <string name="about_us_button">About Us</string>
+    <string name="rate_us_button">Rate Us</string>
     <string name="buses_button">Buses</string>
     <string name="stations_button">Stations</string>
-    <string name="balance_query_button">Balance Query</string>
+    <string name="balance_query_button">Balance\nQuery</string>
     <string name="dealers_button">Dealers</string>
+    <string name="welcome_string">Welcome!</string>
+    <string name="Profile">profile_text</string>
+    <string name="profile_viewtext">Profile</string>
+    <string name="system_text">System</string>
+    <string name="application_text">Application</string>
+
 
 </resources>
 

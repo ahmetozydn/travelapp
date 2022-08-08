@@ -16,19 +16,29 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/mail_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/password_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/plain_text_background.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/text_view_background.xml" value="0.131" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_about_us.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_change_the_language.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_favorites.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_home.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_lateinit.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_location.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_login.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_logout.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_rate_us.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_search.xml" value="0.1" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_settings.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_share_the_app.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main.xml" value="0.2857142857142857" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main_screen.xml" value="0.14285714285714285" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_favorites.xml" value="0.12135416666666667" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_home.xml" value="0.14878892733564014" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_home.xml" value="0.12571428571428572" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_location.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_menu.xml" value="0.2857142857142857" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1745" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.132" />
       </map>
     </option>
   </component>
@@ -41,7 +51,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.12571428571428572" />
       </ProjectState>
     </option>
   </component>

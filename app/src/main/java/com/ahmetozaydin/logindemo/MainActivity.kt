@@ -37,13 +37,15 @@ class MainActivity : AppCompatActivity() {
             accountName = binding.editTextAccountName.text.toString()
             password = binding.editTextPassword.text.toString()
             if (accountName == "" || password == "") {
-                Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
+                    .show()
             } else {
                 auth.signInWithEmailAndPassword(accountName!!, password!!).addOnSuccessListener {
                     val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
                     startActivity(intent)
                     finish()
-                    Toast.makeText(this@MainActivity,"Login is successful",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "Login is successful", Toast.LENGTH_LONG)
+                        .show()
 
                 }.addOnFailureListener {
                     Toast.makeText(this@MainActivity, it.localizedMessage, Toast.LENGTH_SHORT)
@@ -61,17 +63,17 @@ class MainActivity : AppCompatActivity() {
             if (accountName == "" || password == "") {
                 Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
                     .show()
-
-
             } else {
                 auth.createUserWithEmailAndPassword(accountName!!, password!!)
                     .addOnSuccessListener {
-
-                        Toast.makeText(this@MainActivity,"The user has been Created successfully",Toast.LENGTH_SHORT).show()
-                        intent = Intent(this@MainActivity,MainScreenActivity::class.java)
+                        Toast.makeText(
+                            this@MainActivity,
+                            "The user has been Created successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        intent = Intent(this@MainActivity, MainScreenActivity::class.java)
                         startActivity(intent)
                         finish()
-
                     }.addOnFailureListener {
                         Toast.makeText(this@MainActivity, it.localizedMessage, Toast.LENGTH_LONG)
                             .show()
@@ -81,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
 
 
 

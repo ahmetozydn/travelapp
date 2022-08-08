@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MenuFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:lines="3"
+            android:text="@string/welcome_string"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/line_color"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.7"
+            android:text="@string/profile_viewtext"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settingsButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:stateListAnimator="@null"
+
+            android:background="@drawable/text_view_background"
+            android:cursorVisible="false"
+            android:drawableLeft="@drawable/vector_settings"
+            android:elevation="10dp"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:text="@string/settings_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/changeTheLanguageButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_change_the_language"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:text="@string/change_the_language_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="15dp"
+            android:alpha="0.7"
+            android:background="@color/line_color"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.7"
+            android:text="@string/application_text"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/aboutUsButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_about_us"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:shadowColor="#A61919"
+            android:text="@string/about_us_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareTheAppButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_share_the_app"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:shadowColor="#A61919"
+            android:text="@string/share_the_app_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rateUsButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_rate_us"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:shadowColor="#A61919"
+            android:text="@string/rate_us_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="300dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/line_color"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.7"
+            android:text="@string/system_text"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logInButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_login"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:shadowColor="#A61919"
+            android:text="@string/log_in_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logOutButton"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/vector_logout"
+            android:insetLeft="15dp"
+            android:insetTop="2dp"
+            android:insetBottom="2dp"
+            android:shadowColor="#A61919"
+            android:text="@string/log_out_button"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

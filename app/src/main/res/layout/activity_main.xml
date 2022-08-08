@@ -4,53 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAE5E5"
-    android:backgroundTint="#EAE5E5"
+    android:background="#FBFBFB"
+    android:backgroundTint="#F8F3F3"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="208dp"
-        android:layout_height="187dp"
-        android:layout_marginTop="50dp"
-        android:background="#EDE7E7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_vector_asset" />
 
     <EditText
         android:id="@+id/editTextAccountName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button_background"
+        android:background="@drawable/text_view_background"
         android:drawableLeft="@drawable/account_name_icon"
         android:ems="10"
         android:hint="@string/E_mail"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColorHint="#4A4747"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/login_vector_asset" />
+        app:srcCompat="@drawable/login_vector_asset"
+        tools:layout_editor_absoluteY="267dp" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:background="@drawable/button_background"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/text_view_background"
         android:drawableLeft="@drawable/password_icon"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColorHint="#4A4747"
         android:textSize="16sp"
 
 
@@ -63,13 +52,14 @@
         android:layout_width="209dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
-        android:background="#C32C2C"
-        android:backgroundTint="#db402c"
-        android:drawableLeft="@drawable/ic_baseline_login_24"
         android:alpha="08"
+        android:background="@drawable/text_view_background"
+        android:drawableRight="@drawable/ic_baseline_login_24"
 
+        android:fontFamily="sans-serif-black"
         android:shadowColor="#000000"
         android:text="@string/Log_In"
+        android:textAllCaps="false"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +79,9 @@
         android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logInButton" />
+        app:layout_constraintTop_toBottomOf="@+id/logInButton"
+
+        />
 
     <TextView
         android:id="@+id/signUpButton"
@@ -102,5 +94,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPasswordText" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="141dp"
+        android:layout_height="138dp"
+        android:alpha="0.9"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAccountName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562"
+        app:srcCompat="@drawable/asis_jpeg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

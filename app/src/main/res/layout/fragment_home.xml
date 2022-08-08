@@ -13,13 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/img" />
+        app:srcCompat="@drawable/img"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="dp"
+
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="32dp"
         android:layout_marginBottom="180dp"
         android:background="@drawable/button_background_low_radius"
         android:drawableLeft="@drawable/vector_search"
@@ -27,11 +30,11 @@
         android:hint="@string/search_button"
         android:inputType="textPersonName"
         android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColorHint="#333030"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -47,8 +50,6 @@
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
-
-
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -57,20 +58,20 @@
         app:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="1dp"
-            android:layout_marginEnd="1dp"
-
-
+            android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
-            android:text="@string/string_button"
+            android:padding="1dp"
+            android:text="@string/balance_query_button"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
             app:layout_row="0"
-            android:alpha="0.7"
+            app:layout_rowSpan="2"
 
 
             />
@@ -78,16 +79,18 @@
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="1dp"
+            android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
-            android:text="@string/string_button"
+            android:padding="1dp"
+            android:text="@string/buses_button"
+            android:textAllCaps="false"
             android:textColor="@color/black"
-
             android:textSize="11sp"
             app:layout_column="1"
             app:layout_row="0"
-            android:alpha="0.7"
+
 
             />
 
@@ -96,14 +99,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
-
+            android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
-            android:text="@string/string_button"
+            android:padding="1dp"
+            android:text="@string/dealers_button"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
             app:layout_row="1"
-            android:alpha="0.7"
 
             />
 
@@ -112,15 +116,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
+            android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
-            android:text="@string/string_button"
+            android:padding="1dp"
+            android:text="@string/stations_button"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="1"
             app:layout_row="1"
-            android:alpha="0.7"
 
             />
+
+
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
