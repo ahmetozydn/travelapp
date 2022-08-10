@@ -1,10 +1,9 @@
-package com.ahmetozaydin.logindemo
+package com.ahmetozaydin.logindemo.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.ahmetozaydin.logindemo.databinding.ActivityMainBinding
-import com.ahmetozaydin.logindemo.databinding.ActivityMainBinding.inflate
+import com.ahmetozaydin.logindemo.*
 import com.ahmetozaydin.logindemo.databinding.ActivityMainScreenBinding
 
 class MainScreenActivity : AppCompatActivity() {
@@ -29,7 +28,7 @@ class MainScreenActivity : AppCompatActivity() {
                 R.id.home -> makeCurrentFragment(homeFragment)
                 R.id.location -> makeCurrentFragment(locationFragment)
                 R.id.favorites -> makeCurrentFragment(favoritesFragment)
-                R.id.menu->makeCurrentFragment(menuFragment)
+                R.id.menu ->makeCurrentFragment(menuFragment)
                 else -> return@setOnItemSelectedListener true
 
             }

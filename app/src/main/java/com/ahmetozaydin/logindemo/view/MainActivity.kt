@@ -1,4 +1,4 @@
-package com.ahmetozaydin.logindemo
+package com.ahmetozaydin.logindemo.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
+
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         var accountName: String?
         var password: String?
+
 
         val currentUser = auth.currentUser
         if (currentUser != null) {
@@ -81,7 +84,10 @@ class MainActivity : AppCompatActivity() {
                     }
             }
         }
+
     }
+
+
 }
 
 

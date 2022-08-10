@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:background="#F1EAEA"
-    tools:context=".MainScreenActivity">
+    tools:context=".view.MainScreenActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -20,6 +20,10 @@
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:background="@color/white"
+        android:alpha="0.8"
+        app:itemIconTint="@color/black"
+        
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

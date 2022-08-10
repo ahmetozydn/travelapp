@@ -9,29 +9,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ahmetozaydin.logindemo.databinding.FragmentLocationBinding
-
-
-
-
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 class LocationFragment : Fragment() {
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
-    //private lateinit var mMap:GoogleMap
+    lateinit var mMap: GoogleMap
     private lateinit var binding:FragmentLocationBinding//binding nasıl kullanılır fragmentlarda
 
 
-    /*private val callback = OnMapReadyCallback { googleMap ->
+    private val callback = OnMapReadyCallback { googleMap ->
     mMap = googleMap
 
-
-
-
+        
         val sydney = LatLng(-34.0, 151.0)
         googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,15f))
-    }*/
+    }
 
 
     override fun onCreateView(
@@ -46,7 +46,7 @@ class LocationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       /* val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment?.getMapAsync(callback)*/
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        mapFragment?.getMapAsync(callback)
     }
 }

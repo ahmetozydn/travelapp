@@ -2,15 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ahmetozaydin.logindemo">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/asis_jpeg"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -30,13 +31,24 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDaKrSHbej4FoAAQks3gg0bhWsXwte6aNc" />
+            android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".MainScreenActivity"
+            android:name=".DeleteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_delete" />
+        <activity
+            android:name=".model.Stop"
+            android:exported="false"
+            android:label="@string/title_activity_stop" />
+        <activity
+            android:name=".view.Stops"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

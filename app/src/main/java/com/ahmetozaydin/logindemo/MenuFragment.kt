@@ -15,7 +15,6 @@ import com.google.firebase.ktx.Firebase
 
 class MenuFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var binding: FragmentMenuBinding
 
 
 
@@ -30,6 +29,7 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_menu, container, false)
+
 
 
     }

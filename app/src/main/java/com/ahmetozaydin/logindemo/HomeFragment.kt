@@ -1,15 +1,19 @@
 package com.ahmetozaydin.logindemo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-
+import com.ahmetozaydin.logindemo.databinding.FragmentHomeBinding
+import com.ahmetozaydin.logindemo.view.Stops
 
 
 class HomeFragment : Fragment() {
+
+    lateinit var binding: FragmentHomeBinding
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +29,24 @@ class HomeFragment : Fragment() {
 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.stopButton.setOnClickListener{
+
+            val intent = Intent(activity, Stops::class.java)// Because Fragment is NOT of Context type, you'll need to call the parent Activity:
+           activity?.startActivity(intent)
+
+            /*activity?.let{
+                val intent = Intent(activity,DeleteActivity::class.java)
+                it.startActivity(intent)
+            }*/
+
+        }
     }
 
 

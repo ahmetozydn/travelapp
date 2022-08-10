@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginDemo</string>
+    <string name="app_name">Asis</string>
     <string name="Log_In">&#160;&#160;&#160;&#160;&#160;&#160;Login</string>
     <string name="Did_you_Forget_the_Password">Forget Password?</string>
     <string name="Sign_Up">Sign Up</string>
@@ -28,13 +28,16 @@
     <string name="buses_button">Buses</string>
     <string name="stations_button">Stations</string>
     <string name="balance_query_button">Balance\nQuery</string>
-    <string name="dealers_button">Dealers</string>
     <string name="welcome_string">Welcome!</string>
     <string name="Profile">profile_text</string>
     <string name="profile_viewtext">Profile</string>
     <string name="system_text">System</string>
     <string name="application_text">Application</string>
-
+    <string name="stops_button">Stops</string>
+    <string name="menu_string">\nMenu</string>
+    <string name="title_activity_stop">Stop</string>
+    <string name="title_activity_stops_map">StopsMapActivity</string>
+    <string name="title_activity_delete">DeleteActivity</string>
 
 </resources>
 

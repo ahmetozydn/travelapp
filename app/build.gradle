@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
@@ -14,7 +14,6 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,7 +34,11 @@ android {
         viewBinding true
     }
 }
+/*
+def rxJavaVersion = '3.1.4'
 
+def retrofitVersion = '2.9.0'
+*/
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
     implementation 'com.google.firebase:firebase-analytics'
@@ -54,7 +57,20 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx'
 
 
+/*
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion" projeye Rxjava eklenmedi sıkıntı çıkar mı bilmiyorum
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    */
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
 }

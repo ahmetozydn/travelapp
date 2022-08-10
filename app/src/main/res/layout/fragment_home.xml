@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:background="#F1EAEA"
-    tools:context=".MainScreenActivity">
+    tools:context=".view.MainScreenActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -95,14 +95,14 @@
             />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/stopButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
-            android:text="@string/dealers_button"
+            android:text="@string/stops_button"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
