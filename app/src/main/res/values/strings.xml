@@ -27,7 +27,6 @@
     <string name="rate_us_button">Rate Us</string>
     <string name="buses_button">Buses</string>
     <string name="stations_button">Stations</string>
-    <string name="balance_query_button">Balance\nQuery</string>
     <string name="welcome_string">Welcome!</string>
     <string name="Profile">profile_text</string>
     <string name="profile_viewtext">Profile</string>
@@ -38,6 +37,7 @@
     <string name="title_activity_stop">Stop</string>
     <string name="title_activity_stops_map">StopsMapActivity</string>
     <string name="title_activity_delete">DeleteActivity</string>
+    <string name="bus_location_button">Bus Locations</string>
 
 </resources>
 

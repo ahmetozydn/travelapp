@@ -19,7 +19,7 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityStopsBinding
-
+    private lateinit var location: LatLng
 
     
     var stopResponseList: ArrayList<StopResponse>? = null
@@ -43,14 +43,11 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-
-
-        loadData()
-
     }
 
-    private fun loadData() {
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -80,19 +77,18 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                             println("latitude : " + stop.latitude)
                             println("longitude : " + stop.longitude)
 
-                           val location = LatLng(stop.atco_latitude!!,stop.longitude!!)
+                            location = LatLng(stop.atco_latitude!!,stop.longitude!!)
                             mMap.addMarker(MarkerOptions().position(location).title("${stop.name}"))
 
                         }
+
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,100f))
+
                     }
+
                 }
             }
         })
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
 
 
 

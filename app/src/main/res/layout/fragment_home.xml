@@ -65,7 +65,7 @@
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
-            android:text="@string/balance_query_button"
+            android:text="@string/bus_location_button"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
