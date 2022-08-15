@@ -38,6 +38,14 @@
     <string name="title_activity_stops_map">StopsMapActivity</string>
     <string name="title_activity_delete">DeleteActivity</string>
     <string name="bus_location_button">Bus Locations</string>
+    <string name="lines_text">Lines</string>
+    <string name="services_button">Services</string>
+    <string name="title_activity_service">ServiceActivity</string>
+
+    <string-array name="Languages">
+        <item>English</item>
+        <item>Turkish</item>
+    </string-array>
 
 </resources>
 

@@ -71,21 +71,20 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                 if (response.isSuccessful) {
                     response.body()?.let {
                         stopList = ArrayList(it.stops)
+                        var counter = 0
                         for (stop: Stop in stopList!!) {
-
-                            println("name : " + stop.name)
+                            counter++
+                            /*println("name : " + stop.name)
                             println("latitude : " + stop.latitude)
-                            println("longitude : " + stop.longitude)
-
-                            location = LatLng(stop.atco_latitude!!,stop.longitude!!)
+                            println("longitude : " + stop.longitude)*/
+                            location = LatLng(stop.latitude!!,stop.longitude!!)
                             mMap.addMarker(MarkerOptions().position(location).title("${stop.name}"))
-
+                            if(counter ==10 ){
+                                break
+                            }
                         }
-
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,100f))
-
                     }
-
                 }
             }
         })

@@ -2,6 +2,7 @@ package com.ahmetozaydin.logindemo.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import com.ahmetozaydin.logindemo.*
 import com.ahmetozaydin.logindemo.databinding.ActivityMainScreenBinding
@@ -20,8 +21,13 @@ class MainScreenActivity : AppCompatActivity() {
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        makeCurrentFragment(homeFragment)
 
+        makeCurrentFragment(homeFragment)
+        // TODO make a click effect on bottom navigation view.
+
+
+        val intent = intent
+        val authorized = intent.getStringExtra("authorized")
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {

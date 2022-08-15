@@ -10,5 +10,6 @@
     <color name="plain_text_color">#FFFFFFFF</color>
     <color name="ligth_white">#E6D9D9</color>
     <color name="line_color">#3A3939</color>
-
+    <color name="button_nav_color">#E5E5E5</color>
+    <color name= "grey_color">#e0e0e0</color>
 </resources>

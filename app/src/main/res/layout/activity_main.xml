@@ -20,11 +20,13 @@
         android:hint="@string/E_mail"
         android:inputType="textEmailAddress"
         android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        android:layout_marginTop="40dp"
         android:textColor="#000000"
         android:textColorHint="#4A4747"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/login_vector_asset"
         tools:layout_editor_absoluteY="267dp" />
 
@@ -57,7 +59,6 @@
         android:alpha="08"
         android:background="@drawable/text_view_background"
         android:drawableRight="@drawable/ic_baseline_login_24"
-
         android:fontFamily="sans-serif-black"
         android:shadowColor="#000000"
         android:text="@string/Log_In"
@@ -99,7 +100,7 @@
         android:id="@+id/imageView2"
         android:layout_width="141dp"
         android:layout_height="138dp"
-        android:alpha="0.9"
+        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextAccountName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

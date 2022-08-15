@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#e0e0e0"
-            android:lines="3"
             android:text="@string/menu_string"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -70,6 +69,7 @@
             android:textSize="18sp" />-->
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/changeTheLanguageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,11 +89,16 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="300dp"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginLeft="15dp"
-            android:alpha="0.6"
+            android:alpha="0.3"
             android:background="@color/line_color"
             android:gravity="center" />
+
+       <!-- <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />-->
     </LinearLayout>
 
     <LinearLayout
@@ -117,12 +122,14 @@
             android:textSize="18sp" />
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/aboutUsButton"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:alpha="1"
-            android:background="@color/white"
+            android:elevation="0dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/vector_about_us"
             android:insetLeft="15dp"
             android:insetTop="2dp"
@@ -135,6 +142,7 @@
             android:textSize="16sp" />
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/shareTheAppButton"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
@@ -174,9 +182,9 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="300dp"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginLeft="15dp"
-            android:alpha="0.6"
+            android:alpha="0.3"
             android:background="@color/line_color"
             android:gravity="center" />
     </LinearLayout>
@@ -200,7 +208,8 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-        <com.google.android.material.button.MaterialButton
+       <!-- <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/logInButton"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
@@ -212,12 +221,14 @@
             android:insetBottom="2dp"
             android:shadowColor="#A61919"
             android:text="@string/log_in_button"
+            android:visibility="gone"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp" /> -->
 
-        <com.google.android.material.button.MaterialButton
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:id="@+id/logOutButton"
             android:layout_width="411dp"
             android:layout_height="wrap_content"

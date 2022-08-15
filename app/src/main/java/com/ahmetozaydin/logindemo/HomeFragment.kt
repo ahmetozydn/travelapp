@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ahmetozaydin.logindemo.databinding.FragmentHomeBinding
+import com.ahmetozaydin.logindemo.model.BusLocations
+import com.ahmetozaydin.logindemo.model.Services
 import com.ahmetozaydin.logindemo.view.Stops
 
 
@@ -47,7 +49,16 @@ class HomeFragment : Fragment() {
             }*/
 
         }
+        binding.busLocations.setOnClickListener{
+            val intent = Intent(activity, BusLocation::class.java)
+                activity?.startActivity(intent)
+
+            }
+        binding.services.setOnClickListener{
+            val intent = Intent(activity, ServiceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+        }
     }
 
 
-}

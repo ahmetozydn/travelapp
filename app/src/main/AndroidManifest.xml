@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ahmetozaydin.logindemo">
+    package="com.ahmetozaydin.logindemo" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -16,10 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo"
-        tools:targetApi="31">
-        <activity
-            android:name=".BusLocation"
-            android:exported="false" />
+        tools:targetApi="31" >
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -30,15 +28,19 @@
              Once you have your API key (it starts with "AIza"), define a new property in your
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+             AIzaSyDaKrSHbej4FoAAQks3gg0bhWsXwte6aNc
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyDaKrSHbej4FoAAQks3gg0bhWsXwte6aNc" />
 
         <activity
-            android:name=".DeleteActivity"
+            android:name=".ServiceActivity"
             android:exported="false"
-            android:label="@string/title_activity_delete" />
+            android:label="@string/title_activity_service" />
+        <activity
+            android:name=".BusLocation"
+            android:exported="false" />
         <activity
             android:name=".model.Stop"
             android:exported="false"
@@ -51,7 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

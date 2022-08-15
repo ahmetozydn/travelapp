@@ -20,11 +20,12 @@
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:background="@color/white"
+        android:background="@color/button_nav_color"
         android:alpha="0.8"
+        app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/black"
-        
         android:id="@+id/bottomNavigationView"
+        app:itemTextColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

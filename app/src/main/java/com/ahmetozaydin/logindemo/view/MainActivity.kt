@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.ahmetozaydin.logindemo.MenuFragment
+import com.ahmetozaydin.logindemo.R
 import com.ahmetozaydin.logindemo.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -23,29 +25,41 @@ class MainActivity : AppCompatActivity(){
         val view = binding.root
         setContentView(view)
         auth = Firebase.auth
-
-        var accountName: String?
-        var password: String?
-
-
         val currentUser = auth.currentUser
+
+
+
+
+
+
         if (currentUser != null) {
+
             val intent = Intent(this, MainScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
+        var accountName: String?
+        var password: String?
+
+
+
+
 
 
         binding.logInButton.setOnClickListener {
-            accountName = binding.editTextAccountName.text.toString()
-            password = binding.editTextPassword.text.toString()
+            accountName = binding.editTextAccountName.text.toString().trim()
+            password = binding.editTextPassword.text.toString().trim()
+
             if (accountName == "" || password == "") {
                 Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
                     .show()
             } else {
                 auth.signInWithEmailAndPassword(accountName!!, password!!).addOnSuccessListener {
                     val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
+                    intent.putExtra(currentUser.toString(),"authorized")
                     startActivity(intent)
+
+
                     finish()
                     Toast.makeText(this@MainActivity, "Login is successful", Toast.LENGTH_LONG)
                         .show()
@@ -58,11 +72,17 @@ class MainActivity : AppCompatActivity(){
 
             }
 
+            /*
+            * TODO using if(TextUtils.isEmpty(editTextAccountName){
+            *  binding.editTextAccountName.error ="box cannot leave blank"
+            *  {
+            * */
+
         }
 
         binding.signUpButton.setOnClickListener {
-            accountName = binding.editTextAccountName.text.toString()
-            password = binding.editTextPassword.text.toString()
+            accountName = binding.editTextAccountName.text.toString().trim()
+            password = binding.editTextPassword.text.toString().trim()
             if (accountName == "" || password == "") {
                 Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
                     .show()
@@ -85,7 +105,11 @@ class MainActivity : AppCompatActivity(){
             }
         }
 
+
+
+
     }
+
 
 
 }

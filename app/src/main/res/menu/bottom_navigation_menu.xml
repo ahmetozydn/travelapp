@@ -7,25 +7,35 @@
     >
         <item
             android:id="@+id/home"
+            android:enabled="true"
             android:icon="@drawable/vector_home"
-            android:title="@string/home_button" />
+            android:title="@string/home_button"
+            android:iconTint="@color/black"
+            />
+        <item
+                android:id="@+id/lines"
+                android:enabled="true"
+            android:icon="@drawable/vector_bus2"
+             
+                android:title="@string/lines_text"
+                />
 
         <item
             android:id="@+id/favorites"
-            android:checkable="false"
-            android:checked="false"
             android:enabled="true"
             android:icon="@drawable/vector_favorites"
             android:title="@string/favorites_button"
-            app:showAsAction="collapseActionView" />
+             />
 
         <item
             android:id="@+id/location"
+            android:enabled="true"
             android:icon="@drawable/vector_location"
             android:title="@string/location_button" />
 
         <item
             android:id="@+id/menu"
+            android:enabled="true"
             android:icon="@drawable/vector_menu"
             android:title="@string/menu_button" />
 
