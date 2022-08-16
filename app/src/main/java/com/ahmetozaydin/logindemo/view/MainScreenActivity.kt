@@ -14,6 +14,7 @@ class MainScreenActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val locationFragment = LocationFragment()
     private val menuFragment = MenuFragment()
+    private val linesFragment = LinesFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +36,7 @@ class MainScreenActivity : AppCompatActivity() {
                 R.id.location -> makeCurrentFragment(locationFragment)
                 R.id.favorites -> makeCurrentFragment(favoritesFragment)
                 R.id.menu ->makeCurrentFragment(menuFragment)
+                R.id.lines -> makeCurrentFragment(linesFragment)
                 else -> return@setOnItemSelectedListener true
 
             }

@@ -39,7 +39,9 @@ def rxJavaVersion = '3.1.4'
 
 def retrofitVersion = '2.9.0'
 */
+
 dependencies {
+
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -68,9 +70,11 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
 
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+
 
 }

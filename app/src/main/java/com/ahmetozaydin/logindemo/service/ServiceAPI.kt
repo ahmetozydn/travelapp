@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface ServiceAPI {
     @GET("services")
-    fun getData() : Call<ServiceModel>
+    fun loadData() : Call<ServiceModel>
 }

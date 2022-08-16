@@ -2,6 +2,8 @@ package com.ahmetozaydin.logindemo.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import com.ahmetozaydin.logindemo.R
 import com.ahmetozaydin.logindemo.databinding.ActivityStopsBinding
 import com.ahmetozaydin.logindemo.model.*
@@ -20,6 +22,9 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityStopsBinding
     private lateinit var location: LatLng
+
+
+
 
     
     var stopResponseList: ArrayList<StopResponse>? = null

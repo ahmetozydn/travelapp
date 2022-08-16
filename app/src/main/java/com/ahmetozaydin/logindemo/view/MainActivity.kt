@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(){
 
 
 
+
         if (currentUser != null) {
 
             val intent = Intent(this, MainScreenActivity::class.java)

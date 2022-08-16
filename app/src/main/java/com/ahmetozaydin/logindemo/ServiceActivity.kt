@@ -2,6 +2,10 @@ package com.ahmetozaydin.logindemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
+import androidx.core.util.Pools
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -24,10 +28,21 @@ class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityServiceBinding
-    private var location : LatLng? = null
-    private var servicesList : ArrayList<Services>? = null
+    private var location: LatLng? = null
+    private var servicesList: ArrayList<ServiceModel>? = null
+
+    // private var pointList = ArrayList<Point>()
+    private var serviceList: ArrayList<Services>? = null
+
+   // private var pointList = ArrayList<Point>()
+    private var routeLists = ArrayList<Route>()
+    private var routeObject: Route? = null
+    private var pointList : ArrayList<Point>? = null
 
 
+
+    var runnable: Runnable = Runnable {}
+    var handler: Handler = Handler(Looper.getMainLooper())
 
 
     companion object {
@@ -45,44 +60,87 @@ class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        fetchData()
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
 
-        val service = retrofit.create(ServiceAPI::class.java)
-        val call = service.getData()
+    }
 
-        call.enqueue(object : Callback<ServiceModel> {
+    private fun fetchData() {
 
-            override fun onFailure(call: Call<ServiceModel>, t: Throwable) {
-                t.printStackTrace()
-            }
-            override fun onResponse(
-                call: Call<ServiceModel>,
-                response: Response<ServiceModel>
-            ) {
+        runnable = object : Runnable {
+            override fun run() {
 
-                if (response.isSuccessful) {
-                    response.body()?.let {
-                         //pointList = arrayListOf<Point>()
-                        servicesList = ArrayList(it.services)
+                val retrofit = Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
 
-                        for (services:Services in servicesList!!) {
-                            println(services.name)
-                            println(services.routes)
-                                /*val location = LatLng(services.latitude,services.longitude)
-                                mMap.addMarker(MarkerOptions().position(location!!).title("${services.stopID}"))*/
-                                }
-                        }
-                        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location!!,100f))
+                val service = retrofit.create(ServiceAPI::class.java)
+                val call = service.loadData()
+
+                call.enqueue(object : Callback<ServiceModel> {
+
+                    override fun onFailure(call: Call<ServiceModel>, t: Throwable) {
+                        t.printStackTrace()
+                        println("an error occurred")
                     }
-                }
-            })
+
+                    override fun onResponse(
+                        call: Call<ServiceModel>,
+                        response: Response<ServiceModel>
+                    ) {
+
+
+                        if (response.isSuccessful) {
+                            response.body()?.let { serviceModel ->
+                               // pointList = routeObject?.points as ArrayList<Point>
+                               // pointList = routeObject?.points as ArrayList<Point>?
+                               // pointList = routeObject?.points?.let { ArrayList(routeObject!!.points!!) }
+                                var counter = 0
+                                val list = ArrayList<Point>()
+                                serviceModel.services?.forEach { services ->
+                                    services.routes?.forEach { route ->
+                                        route.points?.forEach { point ->
+                                           // Log.e("TAG",point.stopID.orEmpty())
+                                            list.add(point)
+                                            val location = LatLng(point.latitude,point.longitude)
+                                            mMap.addMarker(MarkerOptions().position(location).title("${point.stopID}"))
+
+
+                                           //         println(point.latitude)
+                                         //   println(point.longitude)
+                                        }
+                                    }
+                                }
+
+                                //serviceList = ArrayList(ServiceModel.services)
+
+                                //pointList = arrayListOf<Point>
+                                // servicesList = arrayListOf(it)
+                                //pointList = ArrayList()
+
+
+                                /*for (services: Services in serviceList!!) {
+
+                                    println(services.name)
+                                    println("hello world")
+                                }*/
+                            }
+                            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location!!,100f))
+                        }
+                    }
+                })
+                handler.postDelayed(this, 1500000000)
+            }
+
+        }
+        handler.post(runnable)
+
+
     }
 }
 

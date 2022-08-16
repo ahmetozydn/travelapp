@@ -4,6 +4,9 @@ import android.content.Context
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import com.ahmetozaydin.logindemo.BusLocation.Companion.BASE_URL
 import com.ahmetozaydin.logindemo.databinding.ActivityBusLocationBinding
@@ -20,10 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptor
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,10 +32,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BusLocation : AppCompatActivity(), OnMapReadyCallback {
 
+    var runnable : Runnable = Runnable {}
+    var handler  : Handler = Handler(Looper.getMainLooper())
+
     private lateinit var binding:ActivityBusLocationBinding
     private lateinit var mMap: GoogleMap
     private var busLocationsList : ArrayList<BusLocations>? = null
     private lateinit var location :LatLng
+   //var latlngList = arrayListOf<LatLng>()
+   // var markerOptions = MarkerOptions()
+    //var markerList = ArrayList<Marker>()
 
     companion object {
      const val BASE_URL = "https://tfe-opendata.com/api/v1/"
@@ -59,46 +65,69 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val retrofit = Retrofit.Builder()
-            .baseUrl(Stops.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val service = retrofit.create(BusLocationsAPI::class.java)
-        val call = service.getData()
+        mMap.clear()
+        fetchData()
 
-        call.enqueue(object : Callback<BusLocationModel> {
+    }
 
-            override fun onFailure(call: Call<BusLocationModel>, t: Throwable) {
-                t.printStackTrace()
-            }
+    private fun fetchData(){
+        runnable = object : Runnable{
+            override fun run() {
+                val retrofit = Retrofit.Builder()
+                    .baseUrl(Stops.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                val service = retrofit.create(BusLocationsAPI::class.java)
+                val call = service.getData()
 
-            override fun onResponse(
-                call: Call<BusLocationModel>,
-                response: Response<BusLocationModel>
-            ) {
-                if (response.isSuccessful) {
-                    response.body()?.let {
-                        busLocationsList = ArrayList(it.vehicles)
-                        var counter = 0
-                        for (bus: BusLocations in busLocationsList!!) {
-                            counter++
-                            /*println("name : " + stop.name)
-                            println("latitude : " + stop.latitude)
-                            println("longitude : " + stop.longitude)*/
-                            if(counter == 30)
-                                break
-                            location = LatLng(bus.latitude!!,bus.longitude!!)
-                            mMap.addMarker(MarkerOptions().position(location).title("${bus.longitude}"))
-                            println("@${bus.destination}")
+                call.enqueue(object : Callback<BusLocationModel> {
 
-                        }
-                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,3f))
+                    override fun onFailure(call: Call<BusLocationModel>, t: Throwable) {
+                        t.printStackTrace()
                     }
-                }
+
+                    override fun onResponse(
+                        call: Call<BusLocationModel>,
+                        response: Response<BusLocationModel>
+                    ) {
+                        if (response.isSuccessful) {
+                            response.body()?.let {
+                                busLocationsList = ArrayList(it.vehicles)
+                                var counter = 0
+                                for (bus: BusLocations in busLocationsList!!) {
+                                    counter++
+
+                                    /*println("name : " + stop.name)
+                                    println("latitude : " + stop.latitude)
+                                    println("longitude : " + stop.longitude)*/
+                                    if(counter == 30)
+                                        break
+
+                                    location = LatLng(bus.latitude,bus.longitude)
+                                    val marker : Marker
+
+
+                                    mMap.addMarker(MarkerOptions().position(location)
+                                        .title("${bus.longitude}"))
+
+
+
+
+
+                                }
+                            }
+                        }
+                    }
+                })
+
+
+
+
+                handler.postDelayed(this,20000)// this refers to runnable.
+
             }
-        })
 
-
-
+        }
+        handler.post(runnable)
     }
 }
