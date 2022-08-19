@@ -31,7 +31,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyDaKrSHbej4FoAAQks3gg0bhWsXwte6aNc" />
 
         <activity
             android:name=".LinesToMap"

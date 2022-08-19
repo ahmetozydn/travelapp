@@ -38,12 +38,12 @@ class LinesAdapter(private val serviceList: List<Services>) : RecyclerView.Adapt
        // holder.binding.lineName.text = serviceList[position].name.toString()
 
 
-        holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"
+        holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"//Alp'e buranın designının nasıl daha iyi olması gerektiğini sor.
+
 
 
         holder.itemView.setOnClickListener{
-            fun onClick(view:View){
-            }
+
 
         }
 

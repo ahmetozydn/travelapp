@@ -32,6 +32,7 @@ class MainScreenActivity : AppCompatActivity() {
     private val locationFragment = LocationFragment()
     private val menuFragment = MenuFragment()
     private val linesFragment = LinesFragment()
+    private val myCardFragment = MyCardFragment()
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,7 +94,7 @@ class MainScreenActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> makeCurrentFragment(homeFragment)
-                R.id.location -> makeCurrentFragment(locationFragment)
+                R.id.my_card -> makeCurrentFragment(myCardFragment)
                 R.id.favorites -> makeCurrentFragment(favoritesFragment)
                 R.id.menu -> makeCurrentFragment(menuFragment)
                 R.id.lines -> makeCurrentFragment(linesFragment)

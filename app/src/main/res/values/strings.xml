@@ -37,7 +37,7 @@
     <string name="title_activity_stop">Stop</string>
     <string name="title_activity_stops_map">StopsMapActivity</string>
     <string name="title_activity_delete">DeleteActivity</string>
-    <string name="bus_location_button">Bus Locations</string>
+    <string name="bus_location_button">Bus\nLocations</string>
     <string name="lines_text">Lines</string>
     <string name="services_button">Services</string>
     <string name="title_activity_service">ServiceActivity</string>
@@ -47,6 +47,8 @@
         <item>Turkish</item>
     </string-array>
     <string name="title_activity_lines_to_map">LinesToMap</string>
+    <string name="card_button">My Card</string>
+    <string name="card_text">Card Id</string>
 
 </resources>
 

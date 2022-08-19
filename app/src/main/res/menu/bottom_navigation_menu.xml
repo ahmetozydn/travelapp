@@ -19,6 +19,11 @@
              
                 android:title="@string/lines_text"
                 />
+        <item
+            android:id="@+id/my_card"
+            android:enabled="true"
+            android:icon="@drawable/vector_card"
+            android:title="@string/card_button" />
 
         <item
             android:id="@+id/favorites"
@@ -27,11 +32,7 @@
             android:title="@string/favorites_button"
              />
 
-        <item
-            android:id="@+id/location"
-            android:enabled="true"
-            android:icon="@drawable/vector_location"
-            android:title="@string/location_button" />
+
 
         <item
             android:id="@+id/menu"

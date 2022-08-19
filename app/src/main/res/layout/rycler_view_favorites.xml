@@ -16,7 +16,6 @@
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/black"
         android:textSize="11sp"
-        android:text="merhaba"
         android:textStyle="normal"
         app:drawableLeftCompat="@drawable/vector_bus"
         app:drawableTopCompat="@color/line_color" />
