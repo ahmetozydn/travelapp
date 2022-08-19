@@ -111,6 +111,7 @@ class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
                                             mMap.addMarker(MarkerOptions().position(location).title("${point.stopID}"))
 
 
+
                                            //         println(point.latitude)
                                          //   println(point.longitude)
                                         }

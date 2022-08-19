@@ -245,6 +245,15 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp" />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:alpha="0.3"
+            android:background="@color/line_color"
+            android:gravity="center" />
+
+
     </LinearLayout>
 
 

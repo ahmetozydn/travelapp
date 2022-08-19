@@ -1,17 +1,17 @@
 package com.ahmetozaydin.logindemo
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ahmetozaydin.logindemo.adapter.LinesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentLinesBinding
-import com.ahmetozaydin.logindemo.model.Point
 import com.ahmetozaydin.logindemo.model.ServiceModel
+import com.ahmetozaydin.logindemo.model.Services
 import com.ahmetozaydin.logindemo.service.ServiceAPI
-import com.google.android.gms.maps.model.LatLng
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,10 +19,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class LinesFragment : Fragment() {
+class LinesFragment : Fragment(),LinesAdapter.Listener{
     private lateinit var  binding  : FragmentLinesBinding
-    var runnable: Runnable = Runnable {}
-    var handler: Handler = Handler(Looper.getMainLooper())
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +32,7 @@ class LinesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLinesBinding.inflate(layoutInflater)
 
         return binding.root
@@ -48,8 +46,7 @@ class LinesFragment : Fragment() {
     }
     private fun fetchData() {
 
-        runnable = object : Runnable {
-            override fun run() {
+
 
                 val retrofit = Retrofit.Builder()
                     .baseUrl(ServiceActivity.BASE_URL)
@@ -78,21 +75,38 @@ class LinesFragment : Fragment() {
                                 // pointList = routeObject?.points as ArrayList<Point>?
                                 // pointList = routeObject?.points?.let { ArrayList(routeObject!!.points!!) }
                                 var counter = 0
-                                val list = ArrayList<Point>()
+                                val servicesList = ArrayList<Services>()
+                               // val list = ArrayList<Point>()
                                 serviceModel.services?.forEach { services ->
+                                    //val servicesList = arrayListOf(services.name)
+                                    //servicesList.add(services.name.toString())
+                                   // servicesList = ArrayList<Services>()
+                                    servicesList.add(services)
+
+                                    binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+                                    val adapter = LinesAdapter(servicesList)//?
+                                    binding.recyclerView.adapter = adapter
+
+                                }
+
+
+
+
+                             /*   serviceModel.services?.forEach { services ->
                                     services.routes?.forEach { route ->
                                         route.points?.forEach { point ->
                                             // Log.e("TAG",point.stopID.orEmpty())
                                             list.add(point)
-                                            val location = LatLng(point.latitude,point.longitude)
+                                            //val location = LatLng(point.latitude,point.longitude)
                                             //mMap.addMarker(MarkerOptions().position(location).title("${point.stopID}"))
-
-
-                                                   println(point.latitude)
-                                               println(point.longitude)
+                                                binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+                                                val adapter = LinesAdapter(list)
+                                                binding.recyclerView.adapter = adapter
+                                                  // println(point.latitude)
+                                              // println(point.longitude)
                                         }
                                     }
-                                }
+                                }*/
 
                                 //serviceList = ArrayList(ServiceModel.services)
 
@@ -111,13 +125,18 @@ class LinesFragment : Fragment() {
                         }
                     }
                 })
-                handler.postDelayed(this, 1500000000)
-            }
 
-        }
-        handler.post(runnable)
+
+
 
 
     }
+
+    override fun onItemClick(services: Services) {
+
+
+
+    }
+
 
 }

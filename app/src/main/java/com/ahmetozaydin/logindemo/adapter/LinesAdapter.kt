@@ -1,17 +1,29 @@
 package com.ahmetozaydin.logindemo.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.ahmetozaydin.logindemo.LinesFragment
 import com.ahmetozaydin.logindemo.databinding.RcyclerViewStopsBinding
 import com.ahmetozaydin.logindemo.model.Point
+import com.ahmetozaydin.logindemo.model.ServiceModel
+import com.ahmetozaydin.logindemo.model.Services
 
-class LinesAdapter(val stopList: List<Point>) : RecyclerView.Adapter<LinesAdapter.PlaceHolder>() {//girdi olarak bir hat listesi alması gerekebilir.
 
+class LinesAdapter(private val serviceList: List<Services>) : RecyclerView.Adapter<LinesAdapter.PlaceHolder>() {//girdi olarak bir hat listesi alması gerekebilir.
+
+    interface Listener{
+        fun onItemClick(services:Services)//service : Service de alabilir.
+
+
+    }
 
     class PlaceHolder( val binding: RcyclerViewStopsBinding ): RecyclerView.ViewHolder(binding.root){
-
 
 
     }
@@ -22,17 +34,27 @@ class LinesAdapter(val stopList: List<Point>) : RecyclerView.Adapter<LinesAdapte
 
     }
 
-    override fun onBindViewHolder(holder: PlaceHolder, position: Int) {//bağlamadan sonraki kısım
-        holder.binding.latitude.text =""
+    override fun onBindViewHolder(holder: PlaceHolder, position: Int) {//bağlamadan sonraki kısım,hangi item ne verisi gösterecek.
+       // holder.binding.lineName.text = serviceList[position].name.toString()
+
+
+        holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"
+
 
         holder.itemView.setOnClickListener{
+            fun onClick(view:View){
+            }
 
         }
+
+
     }
 
     override fun getItemCount(): Int {
-        return stopList.size
+        return serviceList.count() //or serviceList.size
     }
+
+
 
 
 }

@@ -55,9 +55,10 @@ class MainActivity : AppCompatActivity(){
                 Toast.makeText(this@MainActivity, "Boxes cannot be left blank!", Toast.LENGTH_LONG)
                     .show()
             } else {
+                binding.logInButton.isEnabled = false
+                binding.logInButton.isClickable = false
                 auth.signInWithEmailAndPassword(accountName!!, password!!).addOnSuccessListener {
                     val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
-                    intent.putExtra(currentUser.toString(),"authorized")
                     startActivity(intent)
 
 

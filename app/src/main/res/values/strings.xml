@@ -46,6 +46,7 @@
         <item>English</item>
         <item>Turkish</item>
     </string-array>
+    <string name="title_activity_lines_to_map">LinesToMap</string>
 
 </resources>
 

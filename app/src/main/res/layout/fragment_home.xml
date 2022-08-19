@@ -23,44 +23,29 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="237dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="180dp"
+        android:alpha="0.8"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/button_background_low_radius"
         android:drawableLeft="@drawable/vector_search"
         android:ems="10"
-        android:paddingStart="4dp"
 
-        android:alpha="0.8"
         android:hint="@string/search_button"
         android:inputType="textPersonName"
+        android:paddingStart="4dp"
+        android:paddingBottom="2dp"
         android:textColor="#000000"
         android:textColorHint="#333030"
         android:textSize="18sp"
-        android:paddingBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/button_nav_color"
-        app:itemTextColor="@color/black"
-        app:itemIconTint="@color/black"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-
-        />
-
     <androidx.gridlayout.widget.GridLayout
+        android:layout_marginBottom="90dp"
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:orientation="horizontal">
@@ -70,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
+
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
@@ -115,6 +101,7 @@
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
+            app:layout_columnSpan="3"
             app:layout_row="1"
 
             />
