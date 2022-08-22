@@ -138,10 +138,8 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
 
     override fun onItemClick(services: Services) {
 
-        Toast.makeText(requireActivity(),"${services.name} item clicked",Toast.LENGTH_LONG).show()
+       // Toast.makeText(requireActivity(),"${services.description} item clicked",Toast.LENGTH_LONG).show()
 
 
     }
-
-
 }

@@ -34,4 +34,5 @@
     <string name="card_button">Kartım</string>
     <string name="services_button">Servisler</string>
     <string name="lines_text">Hatlar</string>
+    <string name="string_button">Buton</string>
 </resources>

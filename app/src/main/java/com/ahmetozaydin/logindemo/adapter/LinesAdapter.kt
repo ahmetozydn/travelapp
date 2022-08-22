@@ -39,7 +39,7 @@ class LinesAdapter(private val serviceList: List<Services>, private val listener
 
 
         holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"//Alp'e buranın designının nasıl daha iyi olması gerektiğini sor.
-        holder.itemView.setOnClickListener{
+        holder.binding.description.setOnClickListener{
             listener.onItemClick(serviceList[position])
         }
     }
@@ -47,8 +47,5 @@ class LinesAdapter(private val serviceList: List<Services>, private val listener
     override fun getItemCount(): Int {
         return serviceList.count() //or serviceList.size
     }
-
-
-
 
 }

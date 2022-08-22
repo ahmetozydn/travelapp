@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Spinner
 import com.ahmetozaydin.logindemo.databinding.FragmentMenuBinding
 import com.ahmetozaydin.logindemo.view.AboutUsActivity
 import com.ahmetozaydin.logindemo.view.MainActivity
@@ -34,7 +35,7 @@ class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMenuBinding.inflate(layoutInflater)// binding must initialized in here
 
 
@@ -69,8 +70,14 @@ class MenuFragment : Fragment() {
             startActivity(intent)
 
         }
+        binding.changeTheLanguageButton.setOnClickListener{
+
+        }
+
+
 
     }
+
 
 
 }
