@@ -63,14 +63,13 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
+
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         getLastKnownLocation()
-
-
-
         val service = retrofit.create(BusAPI::class.java)
         val call = service.getData()
 

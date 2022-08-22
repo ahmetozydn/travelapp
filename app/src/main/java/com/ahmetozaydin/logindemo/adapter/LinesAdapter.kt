@@ -15,12 +15,10 @@ import com.ahmetozaydin.logindemo.model.ServiceModel
 import com.ahmetozaydin.logindemo.model.Services
 
 
-class LinesAdapter(private val serviceList: List<Services>) : RecyclerView.Adapter<LinesAdapter.PlaceHolder>() {//girdi olarak bir hat listesi alması gerekebilir.
+class LinesAdapter(private val serviceList: List<Services>, private val listener:Listener) : RecyclerView.Adapter<LinesAdapter.PlaceHolder>() {//girdi olarak bir hat listesi alması gerekebilir.
 
     interface Listener{
-        fun onItemClick(services:Services)//service : Service de alabilir.
-
-
+        fun onItemClick(services: Services)//service : Service de alabilir.
     }
 
     class PlaceHolder( val binding: RcyclerViewStopsBinding ): RecyclerView.ViewHolder(binding.root){
@@ -35,19 +33,15 @@ class LinesAdapter(private val serviceList: List<Services>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: PlaceHolder, position: Int) {//bağlamadan sonraki kısım,hangi item ne verisi gösterecek.
-       // holder.binding.lineName.text = serviceList[position].name.toString()
+        // holder.binding.lineName.text = serviceList[position].name.toString()
+
+
 
 
         holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"//Alp'e buranın designının nasıl daha iyi olması gerektiğini sor.
-
-
-
         holder.itemView.setOnClickListener{
-
-
+            listener.onItemClick(serviceList[position])
         }
-
-
     }
 
     override fun getItemCount(): Int {

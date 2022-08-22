@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:background="#F1EAEA"
+
     tools:context=".view.MainScreenActivity">
 
     <FrameLayout
@@ -18,17 +19,16 @@
         android:layout_height="0dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:alpha="0.9"
         android:background="@color/button_nav_color"
-        android:alpha="0.8"
         app:labelVisibilityMode="labeled"
-        app:itemIconTint="@color/black"
+        app:itemTextColor="@drawable/bottom_navigation_selector"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
         android:id="@+id/bottomNavigationView"
-        app:itemTextColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu"
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asis</string>
+    <string name="Did_you_Forget_the_Password">Şifrenizi mi Unuttunuz?</string>
+    <string name="password">şifre</string>
+    <string name="E_mail">E-mail</string>
+    <string name="Log_In">Giriş</string>
+    <string name="home_button">Ev</string>
+    <string name="favorites_button">Favoriler</string>
+    <string name="menu_button">Menü</string>
+    <string name="location_button">Konumum</string>
+    <string name="search_button">Ara</string>
+    <string name="hello_blank_fragment">Merhaba Boş Fragment</string>
+    <string name="settings_button">Ayarlar</string>
+    <string name="log_out_button">Çıkış Yap</string>
+    <string name="log_in_button">Giriş Yap</string>
+    <string name="sign_in_button">Giriş Yap</string>
+    <string name="share_the_app_button">Uygulamayı Paylaş</string>
+    <string name="change_the_language_button">Dili Değiştir</string>
+    <string name="about_us_button">Hakkımızda</string>
+    <string name="rate_us_button">Bizi Puanla</string>
+    <string name="buses_button">Otobüsler</string>
+    <string name="stations_button">Duraklar</string>
+    <string name="welcome_string">Hoşgeldin!</string>
+    <string name="profile_viewtext">Profil</string>
+    <string name="system_text">Sistem</string>
+    <string name="application_text">Uygulama</string>
+    <string name="stops_button">Duraklar</string>
+    <string name="title_activity_stop">Durak</string>
+    <string name="Profile">Profil</string>
+    <string name="card_text">Kartım</string>
+    <string name="Show_the_Balance">Bakiyeyi Göster</string>
+    <string name="string_back">Geri</string>
+    <string name="card_button">Kartım</string>
+    <string name="services_button">Servisler</string>
+    <string name="lines_text">Hatlar</string>
+</resources>

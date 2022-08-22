@@ -9,7 +9,6 @@
     <!-- TODO: Update blank fragment layout -->
 
     <com.google.android.material.textfield.TextInputEditText
-
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +21,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:hint="@string/card_text"
+        android:textSize="24sp"
         android:inputType="textPersonName"
         android:paddingLeft="8dp"
         android:textColor="@color/black"
@@ -37,10 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-
+        android:textAllCaps="false"
         android:textColor="@color/black"
-        android:background="@drawable/button_background_colorful"
-        android:text="Button"
+        android:background="@drawable/custom_button_background"
+        android:text="@string/Show_the_Balance"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
         tools:layout_editor_absoluteX="159dp" />
 
