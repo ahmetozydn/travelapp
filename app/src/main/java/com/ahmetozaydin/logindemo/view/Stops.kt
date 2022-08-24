@@ -22,6 +22,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -144,9 +145,6 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                     // use your location object
                     // get latitude , longitude and other info from this
                     val userLocation = LatLng(location.latitude,location.longitude)
-                    println(userLocation.latitude)
-                    println(userLocation.longitude)
-                    println(userLocation.toString())
                     val bitmap =
                         baseContext.let { AppCompatResources.getDrawable(this@Stops,R.drawable.vector_user_location)!!.toBitmap() }
 
@@ -158,10 +156,10 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
                             .title("Your Location"))
                 }
-
             }
 
     }
+
 
 
 

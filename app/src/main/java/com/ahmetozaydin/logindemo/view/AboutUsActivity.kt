@@ -16,8 +16,6 @@ class AboutUsActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.buttonBack.setOnClickListener{
-            val intent = Intent(this,MainScreenActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }

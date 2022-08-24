@@ -58,6 +58,10 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, ServiceActivity::class.java)
             activity?.startActivity(intent)
         }
+
+        binding.buttonBuses.setOnClickListener {
+
+        }
         }
     }
 

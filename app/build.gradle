@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-kapt'
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
@@ -67,7 +68,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion" projeye Rxjava eklenmedi sıkıntı çıkar mı bilmiyorum
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     */
-
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.android.gms:play-services-location:20.0.0'
@@ -75,6 +75,16 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+    def room_version = "2.4.3"
 
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+    //implementation "androidx.room-compiler:$room_version"
+
+    implementation("androidx.room:room-rxjava3:$room_version")
 
 }

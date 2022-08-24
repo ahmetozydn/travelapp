@@ -42,6 +42,8 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
     var runnable : Runnable = Runnable {}
     var handler  : Handler = Handler(Looper.getMainLooper())
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private  var markerList = ArrayList<Marker>()
+    private  var marker : Marker? = null
 
 
     private lateinit var binding:ActivityBusLocationBinding
@@ -126,9 +128,6 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
                                                     "${location.latitude}")
                                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
                                             .title("User Location"))
-
-
-
 
                                 }
                             }

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
 import com.ahmetozaydin.logindemo.databinding.FragmentMenuBinding
 import com.ahmetozaydin.logindemo.view.AboutUsActivity
 import com.ahmetozaydin.logindemo.view.MainActivity
@@ -52,8 +51,11 @@ class MenuFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
             activity?.startActivity(intent)
             activity?.finish()
-
         }
+
+
+
+
         binding.shareTheAppButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "type/palin"

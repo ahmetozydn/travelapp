@@ -4,10 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import androidx.core.util.Pools
-
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -15,9 +11,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.ahmetozaydin.logindemo.databinding.ActivityServiceBinding
 import com.ahmetozaydin.logindemo.model.*
-import com.ahmetozaydin.logindemo.service.BusAPI
 import com.ahmetozaydin.logindemo.service.ServiceAPI
-import com.ahmetozaydin.logindemo.view.Stops
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,5 +1,6 @@
 package com.ahmetozaydin.logindemo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +9,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.ahmetozaydin.logindemo.adapter.LinesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentLinesBinding
+import com.ahmetozaydin.logindemo.model.Point
 import com.ahmetozaydin.logindemo.model.ServiceModel
 import com.ahmetozaydin.logindemo.model.Services
+import com.ahmetozaydin.logindemo.roomdb.ServiceDatabase
+import com.ahmetozaydin.logindemo.roomdb.ServiceEntity
+import com.ahmetozaydin.logindemo.roomdb.ServiceEntityDao
 import com.ahmetozaydin.logindemo.service.ServiceAPI
+import com.ahmetozaydin.logindemo.view.LinesToMap
+import com.google.android.gms.maps.model.LatLng
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,6 +34,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 class LinesFragment : Fragment(),LinesAdapter.Listener{
     private lateinit var  binding  : FragmentLinesBinding
     private var linesAdapter : LinesAdapter?=null
+    private  var stopsLatLng: ArrayList<LatLng>? = null
+    private var latitudeArray : ArrayList<String>? = null
+    private var longitudeArray : ArrayList<String>? = null
+    private var pointsArray: ArrayList<Point>? = null
+
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +63,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
         super.onViewCreated(view, savedInstanceState)
         val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerView.layoutManager = layoutManager
+
         fetchData()
     }
     private fun fetchData() {
@@ -87,13 +106,21 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                             linesAdapter = LinesAdapter(servicesList,this@LinesFragment)
                             binding.recyclerView.adapter = linesAdapter
 
+
                           /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
                             val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
                             binding.recyclerView.adapter = adapter*/
 
                         }
-
-
+                        serviceModel.services?.forEach{ services ->
+                            services.routes?.forEach { it ->
+                                it.points?.forEach {
+                                    latitudeArray?.add(it.latitude.toString())
+                                    longitudeArray?.add(it.longitude.toString())
+                                    pointsArray?.add(it)
+                                }
+                            }
+                        }
 
 
                         /*   serviceModel.services?.forEach { services ->
@@ -111,14 +138,6 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                                    }
                                }
                            }*/
-
-                        //serviceList = ArrayList(ServiceModel.services)
-
-                        //pointList = arrayListOf<Point>
-                        // servicesList = arrayListOf(it)
-                        //pointList = ArrayList()
-
-
                         /*for (services: Services in serviceList!!) {
 
                             println(services.name)
@@ -129,17 +148,12 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                 }
             }
         })
-
-
-
-
-
     }
-
     override fun onItemClick(services: Services) {
-
        // Toast.makeText(requireActivity(),"${services.description} item clicked",Toast.LENGTH_LONG).show()
-
-
+        val intent = Intent(activity,LinesToMap::class.java)
+        intent.putExtra("line_name",services.description)
+        intent.putExtra("pointsArray",pointsArray)
+        startActivity(intent)
     }
 }

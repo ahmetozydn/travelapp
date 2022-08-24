@@ -18,6 +18,10 @@
         android:theme="@style/Theme.LoginDemo"
         tools:targetApi="31">
         <activity
+            android:name=".view.LinesToMap"
+            android:exported="false"
+            android:label="@string/title_activity_lines_to_map" />
+        <activity
             android:name=".view.AboutUsActivity"
             android:exported="false" />
         <!--
@@ -35,10 +39,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDaKrSHbej4FoAAQks3gg0bhWsXwte6aNc" />
 
-        <activity
-            android:name=".LinesToMap"
-            android:exported="false"
-            android:label="@string/title_activity_lines_to_map" />
         <activity
             android:name=".ServiceActivity"
             android:exported="false"
