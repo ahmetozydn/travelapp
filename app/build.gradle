@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android.extensions'
+
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
@@ -34,6 +36,7 @@ android {
     buildFeatures{
         viewBinding true
     }
+
 }
 /*
 def rxJavaVersion = '3.1.4'
@@ -86,5 +89,10 @@ dependencies {
     //implementation "androidx.room-compiler:$room_version"
 
     implementation("androidx.room:room-rxjava3:$room_version")
+
+    implementation 'com.github.xabaras:RecyclerViewSwipeDecorator:1.4'
+
+    implementation 'com.google.android.material:material:1.6.1'
+
 
 }

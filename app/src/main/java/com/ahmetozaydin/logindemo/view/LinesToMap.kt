@@ -6,12 +6,12 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.ahmetozaydin.logindemo.R
 import com.ahmetozaydin.logindemo.databinding.ActivityLinesToMapBinding
+import com.ahmetozaydin.logindemo.model.Services
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.GoogleMap
@@ -20,13 +20,16 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_home.*
 
-class LinesToMap : AppCompatActivity(),OnMapReadyCallback{
-    private lateinit var mMap : GoogleMap
+class LinesToMap : AppCompatActivity(), OnMapReadyCallback {
+    private lateinit var mMap: GoogleMap
     private lateinit var location: LatLng
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var binding: ActivityLinesToMapBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityLinesToMapBinding.inflate(layoutInflater)
         val view = binding.root
@@ -44,11 +47,18 @@ class LinesToMap : AppCompatActivity(),OnMapReadyCallback{
         mMap = googleMap
         getLastKnownLocation()
         val lineName = intent.getStringExtra("line_name")
-        val latitudeArray = intent.getStringArrayExtra("latitude")
-        val longitudeArray = intent.getStringArrayExtra("longitude")
-        binding.textviewTitle.text = lineName
+         binding.textviewTitle.text = lineName
+       /* val serviceList : ArrayList<Services>?  = intent.getParcelableExtra("arraylist")
+
+        if (serviceList != null) {
+            for (servicess:Services in serviceList){
+                println( servicess.name)
+            }
+        }*/
+
 
     }
+
     private fun getLastKnownLocation() {
 
         if (ActivityCompat.checkSelfPermission(
@@ -63,22 +73,26 @@ class LinesToMap : AppCompatActivity(),OnMapReadyCallback{
             return
         }
         fusedLocationClient.lastLocation
-            .addOnSuccessListener { location->
+            .addOnSuccessListener { location ->
                 if (location != null) {
-                    val userLocation = LatLng(location.latitude,location.longitude)
+                    val userLocation = LatLng(location.latitude, location.longitude)
                     val bitmap =
-                        baseContext.let { AppCompatResources.getDrawable(this, R.drawable.vector_user_location)!!.toBitmap() }
-                        mMap.addMarker(
+                        baseContext.let {
+                            AppCompatResources.getDrawable(
+                                this,
+                                R.drawable.vector_user_location
+                            )!!.toBitmap()
+                        }
+                    mMap.addMarker(
                         MarkerOptions()
                             .position(userLocation)
                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
-                            .title("Your Location"))
+                            .title("Your Location")
+                    )
                 }
 
             }
-
     }
 
-
-
 }
+

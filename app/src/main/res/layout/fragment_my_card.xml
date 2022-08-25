@@ -4,45 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MyCardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextTextPersonName2"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:tabInlineLabel="true"
+        android:backgroundTint="@color/white"
+        app:tabTextColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:layout_marginTop="100dp"
-        android:background="@drawable/text_view_background"
-        android:drawableLeft="@drawable/vector_card"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:hint="@string/card_text"
-        android:textSize="24sp"
-        android:inputType="textPersonName"
-        android:paddingLeft="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/line_color"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="91dp" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_ıd" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button"
-        android:layout_marginRight="40dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/query_with_nfc" />
 
-        android:layout_marginLeft="40dp"
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:background="@drawable/custom_button_background"
-        android:text="@string/Show_the_Balance"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        tools:layout_editor_absoluteX="159dp" />
-
-
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

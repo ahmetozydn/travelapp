@@ -24,11 +24,12 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:textAllCaps="false"
         android:id="@+id/description"
+
         android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:layout_height="match_parent"
         android:drawablePadding="5dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="sans-serif"
         android:textColor="@color/black"
         android:textSize="11sp"
         app:drawableLeftCompat="@drawable/vector_bus"

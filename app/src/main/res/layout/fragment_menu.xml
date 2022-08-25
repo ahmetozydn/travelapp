@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     android:background="@color/white"
     tools:context=".MenuFragment">
 
@@ -72,6 +72,8 @@
             android:id="@+id/changeTheLanguageButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="match_parent"
+            android:fontFamily="sans-serif"
+
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:alpha="1"
@@ -134,6 +136,8 @@
             android:elevation="0dp"
             android:insetLeft="15dp"
             android:insetTop="2dp"
+            android:fontFamily="sans-serif"
+
             android:insetBottom="2dp"
             android:shadowColor="#A61919"
             android:text="@string/about_us_button"
@@ -148,6 +152,8 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="411dp"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+
             android:layout_marginTop="10dp"
             android:alpha="1"
 
@@ -162,6 +168,7 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp"
+
             app:iconPadding="14dp" />
 
         <!--<com.google.android.material.button.MaterialButton
@@ -242,6 +249,8 @@
             android:insetLeft="15dp"
             android:insetTop="2dp"
             android:insetBottom="2dp"
+            android:fontFamily="sans-serif"
+
             android:shadowColor="#A61919"
             android:text="@string/log_out_button"
             android:textAlignment="viewStart"

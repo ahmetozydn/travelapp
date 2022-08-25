@@ -1,29 +1,24 @@
 package com.ahmetozaydin.logindemo
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.media.MediaRouter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
+import androidx.slidingpanelayout.widget.SlidingPaneLayout
 import com.ahmetozaydin.logindemo.adapter.LinesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentLinesBinding
-import com.ahmetozaydin.logindemo.model.Point
 import com.ahmetozaydin.logindemo.model.ServiceModel
 import com.ahmetozaydin.logindemo.model.Services
-import com.ahmetozaydin.logindemo.roomdb.ServiceDatabase
-import com.ahmetozaydin.logindemo.roomdb.ServiceEntity
-import com.ahmetozaydin.logindemo.roomdb.ServiceEntityDao
 import com.ahmetozaydin.logindemo.service.ServiceAPI
 import com.ahmetozaydin.logindemo.view.LinesToMap
-import com.google.android.gms.maps.model.LatLng
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,10 +29,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class LinesFragment : Fragment(),LinesAdapter.Listener{
     private lateinit var  binding  : FragmentLinesBinding
     private var linesAdapter : LinesAdapter?=null
-    private  var stopsLatLng: ArrayList<LatLng>? = null
-    private var latitudeArray : ArrayList<String>? = null
-    private var longitudeArray : ArrayList<String>? = null
-    private var pointsArray: ArrayList<Point>? = null
+    private var servicesList = ArrayList<Services>()
+    private var serviceListParcelable = ArrayList<Services>()
+    private lateinit var serviceObject :  Services
+    private var count : Int=0
+    private lateinit var sharedPreferences: SharedPreferences
 
 
 
@@ -63,6 +59,11 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
         super.onViewCreated(view, savedInstanceState)
         val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerView.layoutManager = layoutManager
+
+
+        sharedPreferences =
+            activity?.getSharedPreferences("com.ahmetozaydin.logindemo",Context.MODE_PRIVATE)!!
+        sharedPreferences.edit()?.putInt("count",0)?.apply()
 
         fetchData()
     }
@@ -93,10 +94,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
 
                 if (response.isSuccessful) {
                     response.body()?.let { serviceModel ->
-                        // pointList = routeObject?.points as ArrayList<Point>
-                        // pointList = routeObject?.points as ArrayList<Point>?
-                        // pointList = routeObject?.points?.let { ArrayList(routeObject!!.points!!) }
-                        val servicesList = ArrayList<Services>()
+
                         // val list = ArrayList<Point>()
                         serviceModel.services?.forEach { services ->
                             //val servicesList = arrayListOf(services.name)
@@ -105,22 +103,17 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                             servicesList.add(services)
                             linesAdapter = LinesAdapter(servicesList,this@LinesFragment)
                             binding.recyclerView.adapter = linesAdapter
+                            context?.let { createSwipeGesture(it.applicationContext,binding.recyclerView) }//burası patlatabilir belki
 
 
-                          /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-                            val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
-                            binding.recyclerView.adapter = adapter*/
+
+                            /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+                              val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
+                              binding.recyclerView.adapter = adapter*/
 
                         }
-                        serviceModel.services?.forEach{ services ->
-                            services.routes?.forEach { it ->
-                                it.points?.forEach {
-                                    latitudeArray?.add(it.latitude.toString())
-                                    longitudeArray?.add(it.longitude.toString())
-                                    pointsArray?.add(it)
-                                }
-                            }
-                        }
+
+
 
 
                         /*   serviceModel.services?.forEach { services ->
@@ -138,22 +131,58 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                                    }
                                }
                            }*/
-                        /*for (services: Services in serviceList!!) {
-
-                            println(services.name)
-                            println("hello world")
-                        }*/
                     }
-                    //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location!!,100f))
                 }
             }
         })
     }
+
+
     override fun onItemClick(services: Services) {
-       // Toast.makeText(requireActivity(),"${services.description} item clicked",Toast.LENGTH_LONG).show()
         val intent = Intent(activity,LinesToMap::class.java)
         intent.putExtra("line_name",services.description)
-        intent.putExtra("pointsArray",pointsArray)
+        // intent.putExtra("arrayList",servicesList)
         startActivity(intent)
+    }
+    fun createSwipeGesture(context:Context,recyclerView: RecyclerView){
+        val swipeGestures = object : SwipeGestures(context){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                when(direction){
+                    ItemTouchHelper.LEFT ->{
+                        try{
+
+                            val myDatabase = requireActivity().openOrCreateDatabase("MyDatabase",Context.MODE_PRIVATE,null)
+                            myDatabase.execSQL("CREATE TABLE IF NOT EXISTS table_description (description VARCHAR)")
+
+
+                            if(sharedPreferences.getInt("count",2)==0){
+                                sharedPreferences.edit().putInt("count",1).apply()
+                                for(services:Services in servicesList){
+                                    val rowName = services.description?.replace("'","''")
+                                    myDatabase.execSQL("INSERT INTO table_description(description) VALUES ('${rowName}')")
+                                }
+                            }
+                            val cursor = myDatabase.rawQuery(("SELECT * FROM table_description"),null)
+
+                            val examplesIx = cursor.getColumnIndex("description")
+                            while(cursor.moveToNext()){
+                                println("Text: "+cursor.getString(examplesIx))
+                            }
+                            cursor.close()
+                        }catch (exception : Exception){
+                            exception.printStackTrace()
+                        }
+                    }
+                  /*  ItemTouchHelper.RIGHT->{
+
+                    }*/
+                }
+            }
+
+
+
+        }
+        val touchHelper = ItemTouchHelper(swipeGestures)
+        touchHelper.attachToRecyclerView(recyclerView)
     }
 }

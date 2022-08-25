@@ -84,8 +84,8 @@ class MainScreenActivity : AppCompatActivity() {
             //permission granted
             locationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
-                0,
-                0f,
+                1,
+                2f,
                 locationListener
             )
 

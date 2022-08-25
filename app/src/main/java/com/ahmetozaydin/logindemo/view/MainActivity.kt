@@ -28,11 +28,6 @@ class MainActivity : AppCompatActivity(){
         val currentUser = auth.currentUser
 
 
-
-
-
-
-
         if (currentUser != null) {
 
             val intent = Intent(this, MainScreenActivity::class.java)
@@ -41,11 +36,6 @@ class MainActivity : AppCompatActivity(){
         }
         var accountName: String?
         var password: String?
-
-
-
-
-
 
         binding.logInButton.setOnClickListener {
             accountName = binding.editTextAccountName.text.toString().trim()

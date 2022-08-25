@@ -18,6 +18,7 @@
         android:textAllCaps="false"
         android:textColor="@color/blue_color"
         android:textSize="16sp"
+        android:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -7,14 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ahmetozaydin.logindemo.databinding.FragmentHomeBinding
-import com.ahmetozaydin.logindemo.model.BusLocations
-import com.ahmetozaydin.logindemo.model.Services
 import com.ahmetozaydin.logindemo.view.Stops
 
 
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
 
 
 

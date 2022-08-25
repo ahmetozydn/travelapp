@@ -1,17 +1,9 @@
 package com.ahmetozaydin.logindemo.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.ahmetozaydin.logindemo.LinesFragment
 import com.ahmetozaydin.logindemo.databinding.RcyclerViewStopsBinding
-import com.ahmetozaydin.logindemo.model.Point
-import com.ahmetozaydin.logindemo.model.ServiceModel
 import com.ahmetozaydin.logindemo.model.Services
 
 

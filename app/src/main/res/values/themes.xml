@@ -13,6 +13,10 @@
         <item name="android:statusBarColor" >@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
+    </style>
+        
 </resources>
 
 

@@ -12,7 +12,7 @@
     <string name="menu_button">Menu</string>
     <string name="location_button">Location</string>
     <string name="string_button">Button</string>
-    <string name="search_button">&#160;Search</string>
+    <string name="search_button"><font size="16">&#160;Search</font></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -48,9 +48,11 @@
     </string-array>
     <string name="title_activity_lines_to_map">LinesToMap</string>
     <string name="card_button">My Card</string>
-    <string name="card_text">Card Id</string>
+    <string name="card_text"><font size="16">Card Id</font></string>
     <string name="Show_the_Balance">Show the Balance</string>
     <string name="string_back">Back</string>
+    <string name="query_with_nfc">NFC</string>
+    <string name="card_ıd">CARD ID</string>
 
 </resources>
 

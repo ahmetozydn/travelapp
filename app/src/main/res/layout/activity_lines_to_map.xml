@@ -37,6 +37,7 @@
             android:layout_height="match_parent"
             android:textAlignment="center"
             android:gravity="center"
+            android:fontFamily="sans-serif"
             android:layout_weight="11"
             android:paddingTop="1dp"
             android:textColor="@color/black" />

@@ -94,7 +94,6 @@ class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
                                // pointList = routeObject?.points as ArrayList<Point>
                                // pointList = routeObject?.points as ArrayList<Point>?
                                // pointList = routeObject?.points?.let { ArrayList(routeObject!!.points!!) }
-                                var counter = 0
                                 val list = ArrayList<Point>()
                                 serviceModel.services?.forEach { services ->
                                     services.routes?.forEach { route ->
