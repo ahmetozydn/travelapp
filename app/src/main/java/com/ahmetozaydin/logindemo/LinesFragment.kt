@@ -3,7 +3,6 @@ package com.ahmetozaydin.logindemo
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.MediaRouter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.slidingpanelayout.widget.SlidingPaneLayout
 import com.ahmetozaydin.logindemo.adapter.LinesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentLinesBinding
 import com.ahmetozaydin.logindemo.model.ServiceModel
@@ -33,6 +31,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
     private var serviceListParcelable = ArrayList<Services>()
     private lateinit var serviceObject :  Services
     private var count : Int=0
+    private lateinit var services : Services
     private lateinit var sharedPreferences: SharedPreferences
 
 
@@ -100,11 +99,11 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                             //val servicesList = arrayListOf(services.name)
                             //servicesList.add(services.name.toString())
                             // servicesList = ArrayList<Services>()
+
                             servicesList.add(services)
                             linesAdapter = LinesAdapter(servicesList,this@LinesFragment)
                             binding.recyclerView.adapter = linesAdapter
                             context?.let { createSwipeGesture(it.applicationContext,binding.recyclerView) }//burası patlatabilir belki
-
 
 
                             /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
@@ -112,6 +111,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                               binding.recyclerView.adapter = adapter*/
 
                         }
+
 
 
 
@@ -141,7 +141,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
     override fun onItemClick(services: Services) {
         val intent = Intent(activity,LinesToMap::class.java)
         intent.putExtra("line_name",services.description)
-        // intent.putExtra("arrayList",servicesList)
+        intent.putExtra("Service", services)
         startActivity(intent)
     }
     fun createSwipeGesture(context:Context,recyclerView: RecyclerView){
@@ -162,6 +162,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                                     myDatabase.execSQL("INSERT INTO table_description(description) VALUES ('${rowName}')")
                                 }
                             }
+
                             val cursor = myDatabase.rawQuery(("SELECT * FROM table_description"),null)
 
                             val examplesIx = cursor.getColumnIndex("description")
@@ -173,6 +174,7 @@ class LinesFragment : Fragment(),LinesAdapter.Listener{
                             exception.printStackTrace()
                         }
                     }
+
                   /*  ItemTouchHelper.RIGHT->{
 
                     }*/

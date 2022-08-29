@@ -4,10 +4,14 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android.extensions'
+    id 'kotlin-android-extensions'
 
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+androidExtensions{
+    experimental = true
+}
 android {
     compileSdk 32
 

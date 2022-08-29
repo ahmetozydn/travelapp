@@ -1,29 +1,20 @@
 package com.ahmetozaydin.logindemo
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.text.method.TextKeyListener.clear
-import android.view.LayoutInflater
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
-import com.ahmetozaydin.logindemo.BusLocation.Companion.BASE_URL
 import com.ahmetozaydin.logindemo.databinding.ActivityBusLocationBinding
-import com.ahmetozaydin.logindemo.databinding.ActivityStopsBinding
 import com.ahmetozaydin.logindemo.model.BusLocationModel
 import com.ahmetozaydin.logindemo.model.BusLocations
-import com.ahmetozaydin.logindemo.model.Stop
-import com.ahmetozaydin.logindemo.model.StopResponse
-import com.ahmetozaydin.logindemo.service.BusAPI
 import com.ahmetozaydin.logindemo.service.BusLocationsAPI
 import com.ahmetozaydin.logindemo.view.Stops
-import com.ahmetozaydin.logindemo.view.Stops.Companion.BASE_URL
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -39,23 +30,25 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class BusLocation : AppCompatActivity(), OnMapReadyCallback {
 
-    var runnable : Runnable = Runnable {}
-    var handler  : Handler = Handler(Looper.getMainLooper())
+    var runnable: Runnable = Runnable {}
+    var handler: Handler = Handler(Looper.getMainLooper())
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private  var markerList = ArrayList<Marker>()
-    private  var marker : Marker? = null
+    private var markerList = ArrayList<Marker>()
+    private var marker: Marker? = null
+    private var one = 0
+    private lateinit var bitmap : Bitmap
 
 
-    private lateinit var binding:ActivityBusLocationBinding
+    private lateinit var binding: ActivityBusLocationBinding
     private lateinit var mMap: GoogleMap
-    private var busLocationsList : ArrayList<BusLocations>? = null
-    private lateinit var location :LatLng
-   //var latlngList = arrayListOf<LatLng>()
-   // var markerOptions = MarkerOptions()
+    private var busLocationsList: ArrayList<BusLocations>? = null
+    private lateinit var location: LatLng
+    var latlngList = arrayListOf<LatLng>()
+    // var markerOptions = MarkerOptions()
     //var markerList = ArrayList<Marker>()
 
     companion object {
-     const val BASE_URL = "https://tfe-opendata.com/api/v1/"
+        const val BASE_URL = "https://tfe-opendata.com/api/v1/"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +58,14 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityBusLocationBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+         bitmap =
+            baseContext.let {
+                AppCompatResources.getDrawable(
+                    this@BusLocation,
+                    R.drawable.vector_bus
+                )!!.toBitmap()
+            }
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         val mapFragment = supportFragmentManager
@@ -74,7 +75,6 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
     }
 
 
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         getLastKnownLocation()
@@ -82,8 +82,8 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    private fun fetchData(){
-        runnable = object : Runnable{
+    private fun fetchData() {
+        runnable = object : Runnable {
             override fun run() {
                 val retrofit = Retrofit.Builder()
                     .baseUrl(Stops.BASE_URL)
@@ -97,51 +97,92 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
                     override fun onFailure(call: Call<BusLocationModel>, t: Throwable) {
                         t.printStackTrace()
                     }
-
                     override fun onResponse(
                         call: Call<BusLocationModel>,
                         response: Response<BusLocationModel>
                     ) {
                         if (response.isSuccessful) {
+                            mMap.clear()
                             response.body()?.let {
                                 busLocationsList = ArrayList(it.vehicles)
-                                var counter = 0
+                                val newLatLng = arrayListOf<LatLng>()
                                 for (bus: BusLocations in busLocationsList!!) {
-                                    counter++
+                                    val aLatLong = LatLng(bus.latitude, bus.longitude)
+                                    newLatLng.add(aLatLong)
+                                    try {
+                                        if (one == 0) {
+                                            latlngList.add(aLatLong)
+                                        }else{
+                                            latlngList.forEachIndexed { index, latLng ->
+                                                if(latlngList[index].latitude != newLatLng[index].latitude || latlngList[index].longitude != newLatLng[index].longitude ){
+                                                    println(index)
+                                                    println(" $latLng.latitude     "+latLng.longitude)
+                                                    val newPosition = LatLng( newLatLng[index].latitude, newLatLng[index].longitude)
+                                                    latlngList[index] = newPosition
+                                                }
+                                            }
+                                        }
 
-                                    /*println("name : " + stop.name)
-                                    println("latitude : " + stop.latitude)
-                                    println("longitude : " + stop.longitude)*/
-                                    if(counter == 30)
-                                        break
+                                    }catch (exception :Exception){
+                                        exception.printStackTrace()
+                                    }
 
-                                    location = LatLng(bus.latitude,bus.longitude)
 
+                                   /* location = LatLng(bus.latitude, bus.longitude)
 
                                     val bitmap =
-                                        baseContext.let { AppCompatResources.getDrawable(this@BusLocation,R.drawable.vector_bus)!!.toBitmap() }
+                                        baseContext.let {
+                                            AppCompatResources.getDrawable(
+                                                this@BusLocation,
+                                                R.drawable.vector_bus
+                                            )!!.toBitmap()
+                                        }
 
                                     mMap.addMarker(
                                         MarkerOptions()
                                             .position(location)
-                                            .snippet("${location.longitude}\n" +
-                                                    "${location.latitude}")
+                                            .snippet(
+                                                "${location.latitude}\n" +
+                                                        "${location.latitude}"
+                                            )
                                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
-                                            .title("User Location"))
+                                            .title("Bus Location")
+                                    )*/
+
 
                                 }
+                                latlngList.forEach {LatLng->
+
+
+
+                                    mMap.addMarker(
+                                        MarkerOptions()
+                                            .position(LatLng)
+                                            .snippet(
+                                                "${LatLng.latitude}\n" +
+                                                        "${LatLng.latitude}"
+                                            )
+                                            .icon(bitmap.let {
+                                                BitmapDescriptorFactory.fromBitmap(bitmap) })
+                                            .title("Bus Location")
+                                    )
+                                }
+                                one = 1
                             }
+
                         }
+
                     }
                 })
 
-                handler.postDelayed(this,20000)// this refers to runnable.
+                handler.postDelayed(this, 16000)// this refers to runnable.
 
             }
 
         }
         handler.post(runnable)
     }
+
     private fun getLastKnownLocation() {
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -161,22 +202,27 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
             return
         }
         fusedLocationClient.lastLocation
-            .addOnSuccessListener { location->
+            .addOnSuccessListener { location ->
                 if (location != null) {
                     // use your location object
                     // get latitude , longitude and other info from this
-                    val userLocation = LatLng(location.latitude,location.longitude)
+                    val userLocation = LatLng(location.latitude, location.longitude)
                     println(userLocation.toString())
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,15f))
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
                     val bitmap =
-                        baseContext.let { AppCompatResources.getDrawable(this@BusLocation,R.drawable.vector_user_location)!!.toBitmap() }
+                        baseContext.let {
+                            AppCompatResources.getDrawable(
+                                this@BusLocation,
+                                R.drawable.vector_user_location
+                            )!!.toBitmap()
+                        }
 
                     mMap.addMarker(
                         MarkerOptions()
                             .position(userLocation)
                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
-                            .title("Your Location"))
-
+                            .title("Your Location")
+                    )
 
 
                 }
@@ -184,5 +230,6 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
             }
 
     }
+
 
 }

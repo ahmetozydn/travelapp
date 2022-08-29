@@ -21,10 +21,11 @@
         app:srcCompat="@drawable/img" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextSearch"
         android:layout_width="237dp"
         android:layout_height="36dp"
         android:alpha="0.8"
+        android:textCursorDrawable="@color/black"
         android:layout_marginBottom="60dp"
         android:background="@drawable/button_background_low_radius"
         android:drawableLeft="@drawable/vector_search"

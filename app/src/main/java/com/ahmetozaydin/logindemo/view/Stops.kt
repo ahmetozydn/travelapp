@@ -96,14 +96,13 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                             location = LatLng(stop.latitude!!,stop.longitude!!)
                             //mMap.addMarker(MarkerOptions().position(location).title("${stop.name}"))
                             val bitmap =
-                                baseContext.let { AppCompatResources.getDrawable(this@Stops,R.drawable.vector_stop)!!.toBitmap() }
-
+                                baseContext.let { AppCompatResources.getDrawable(this@Stops,R.drawable.ic_stop)!!.toBitmap() }
                             mMap.addMarker(
                                 MarkerOptions()
                                     .position(location)
                                     .alpha(0.8f)
-                                    .snippet("${location.longitude}\n" +
-                                            "${location.latitude}")
+                                    .snippet("${location.latitude%.2f}\n" +
+                                            "${location.longitude%.2f}")
                                     .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
                                     .title("User Location"))
 

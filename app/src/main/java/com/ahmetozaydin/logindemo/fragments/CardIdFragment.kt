@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ahmetozaydin.logindemo.R
+import com.ahmetozaydin.logindemo.databinding.FragmentCardIdBinding
 
 class CardIdFragment: Fragment() {
+    private lateinit var binding : FragmentCardIdBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
     }
 

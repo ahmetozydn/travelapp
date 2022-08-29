@@ -19,7 +19,7 @@
         app:tabGravity="fill"
         app:layout_constraintHorizontal_bias="0.5"
         app:tabSelectedTextColor="@color/black"
-        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorColor="@color/orange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

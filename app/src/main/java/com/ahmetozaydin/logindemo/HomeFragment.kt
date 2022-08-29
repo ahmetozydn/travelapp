@@ -2,10 +2,12 @@ package com.ahmetozaydin.logindemo
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import com.ahmetozaydin.logindemo.databinding.FragmentHomeBinding
 import com.ahmetozaydin.logindemo.view.Stops
 
@@ -13,14 +15,9 @@ import com.ahmetozaydin.logindemo.view.Stops
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
-
 
 
     }
@@ -60,7 +57,9 @@ class HomeFragment : Fragment() {
         binding.buttonBuses.setOnClickListener {
 
         }
+
         }
+
     }
 
 
