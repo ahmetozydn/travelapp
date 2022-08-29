@@ -6,84 +6,83 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:background="#F1EAEA"
-    tools:context=".MainScreenActivity">
+    tools:context=".view.MainScreenActivity">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/img"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextSearch"
         android:layout_width="237dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="180dp"
+        android:layout_height="36dp"
+        android:alpha="0.8"
+        android:textCursorDrawable="@color/black"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/button_background_low_radius"
         android:drawableLeft="@drawable/vector_search"
         android:ems="10"
+
         android:hint="@string/search_button"
         android:inputType="textPersonName"
+        android:paddingStart="4dp"
+        android:paddingBottom="2dp"
         android:textColor="#000000"
         android:textColorHint="#333030"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+  />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_marginBottom="90dp"
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-
-        />
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button1"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/busLocations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
+            android:lines="2"
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
-            android:text="@string/balance_query_button"
+            android:text="@string/bus_location_button"
+            android:fontFamily="sans-serif"
+
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
             app:layout_row="0"
-            app:layout_rowSpan="2"
-
 
             />
 
-        <Button
-            android:id="@+id/button2"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_buses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
+            android:fontFamily="sans-serif"
+            app:layout_rowSpan="2"
             android:text="@string/buses_button"
             android:textAllCaps="false"
             android:textColor="@color/black"
@@ -94,32 +93,36 @@
 
             />
 
-        <Button
-            android:id="@+id/button3"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stopButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:alpha="0.9"
+            android:fontFamily="sans-serif"
+            app:layout_rowSpan="2"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
-            android:text="@string/dealers_button"
+            android:text="@string/stops_button"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
+            app:layout_columnSpan="2"
             app:layout_row="1"
-
             />
 
-        <Button
-            android:id="@+id/button4"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/services"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
+            android:fontFamily="sans-serif"
+
             android:alpha="0.9"
             android:background="@drawable/button_background_low_radius"
             android:padding="1dp"
-            android:text="@string/stations_button"
+            android:text="@string/services_button"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"

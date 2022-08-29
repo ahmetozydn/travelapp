@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">LoginDemo</string>
+    <string name="app_name">Asis</string>
     <string name="Log_In">&#160;&#160;&#160;&#160;&#160;&#160;Login</string>
     <string name="Did_you_Forget_the_Password">Forget Password?</string>
-    <string name="Sign_Up">Sign Up</string>
+    <string name="sign_up">Sign Up</string>
     <string name="password">&#160;Password</string>
     <string name="E_mail">&#160;E-mail</string>
 
@@ -12,7 +12,7 @@
     <string name="menu_button">Menu</string>
     <string name="location_button">Location</string>
     <string name="string_button">Button</string>
-    <string name="search_button">&#160;Search</string>
+    <string name="search_button"><font size="16">&#160;Search</font></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -27,14 +27,32 @@
     <string name="rate_us_button">Rate Us</string>
     <string name="buses_button">Buses</string>
     <string name="stations_button">Stations</string>
-    <string name="balance_query_button">Balance\nQuery</string>
-    <string name="dealers_button">Dealers</string>
     <string name="welcome_string">Welcome!</string>
     <string name="Profile">profile_text</string>
     <string name="profile_viewtext">Profile</string>
     <string name="system_text">System</string>
     <string name="application_text">Application</string>
+    <string name="stops_button">Stops</string>
+    <string name="menu_string">\nMenu</string>
+    <string name="title_activity_stop">Stop</string>
+    <string name="title_activity_stops_map">StopsMapActivity</string>
+    <string name="title_activity_delete">DeleteActivity</string>
+    <string name="bus_location_button">Bus\nLocations</string>
+    <string name="lines_text">Lines</string>
+    <string name="services_button">Services</string>
+    <string name="title_activity_service">ServiceActivity</string>
 
+    <string-array name="Languages">
+        <item>English</item>
+        <item>Turkish</item>
+    </string-array>
+    <string name="title_activity_lines_to_map">LinesToMap</string>
+    <string name="card_button">My Card</string>
+    <string name="card_text"><font size="16">Card Id</font></string>
+    <string name="Show_the_Balance">Show the Balance</string>
+    <string name="string_back">Back</string>
+    <string name="query_with_nfc">NFC</string>
+    <string name="card_ıd">CARD ID</string>
 
 </resources>
 
