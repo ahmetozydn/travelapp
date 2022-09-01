@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 abstract class SwipeGestures(context: Context) :ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT ) {
-    private  val favoriteColor = ContextCompat.getColor(context,R.color.color_red)
+    private  val favoriteColor = ContextCompat.getColor(context,R.color.plain_text_color)
     private val blackcolor = ContextCompat.getColor(context,R.color.black)
     private val addIcon = R.drawable.vector_favorites
     override fun onMove(

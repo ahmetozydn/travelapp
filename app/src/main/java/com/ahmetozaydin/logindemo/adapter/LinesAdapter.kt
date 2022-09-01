@@ -24,7 +24,7 @@ class LinesAdapter(private val serviceList: List<Services>, private val listener
 
     override fun onBindViewHolder(holder: PlaceHolder, position: Int) {//bağlamadan sonraki kısım,hangi item ne verisi gösterecek.
         // holder.binding.lineName.text = serviceList[position].name.toString()
-        holder.binding.description.text ="  ${serviceList[position].name.toString()}      ${serviceList[position].description.toString()}"//Alp'e buranın designının nasıl daha iyi olması gerektiğini sor.
+        holder.binding.description.text = serviceList[position].description.toString()
         holder.binding.description.setOnClickListener{
             listener.onItemClick(serviceList[position])
         }

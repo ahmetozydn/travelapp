@@ -19,7 +19,6 @@ class MyCardFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,15 +26,10 @@ class MyCardFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_card, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setUpTabs()
     }
-
-
-
     private fun setUpTabs() {
         val adapter = TabLayoutAdapter(childFragmentManager)
         adapter.addFragment(CardIdFragment(),"CARD ID")

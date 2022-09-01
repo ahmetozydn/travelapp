@@ -2,25 +2,18 @@ package com.ahmetozaydin.logindemo.view
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.ahmetozaydin.logindemo.*
 import com.ahmetozaydin.logindemo.databinding.ActivityMainScreenBinding
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.material.snackbar.Snackbar
-import com.google.type.LatLng
 
 class MainScreenActivity : AppCompatActivity() {
 

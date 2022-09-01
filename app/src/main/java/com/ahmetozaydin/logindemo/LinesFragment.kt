@@ -32,14 +32,10 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
     private var linesAdapter: LinesAdapter? = null
     private var servicesList = ArrayList<Services>()
     private var databaseList = ArrayList<String>()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //sharedPreferences.edit()?.putInt("count", 0)?.apply()
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,7 +43,6 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
         binding = FragmentLinesBinding.inflate(layoutInflater)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)

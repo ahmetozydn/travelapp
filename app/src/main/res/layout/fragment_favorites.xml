@@ -4,14 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FBF7F7"
     android:scrollbarSize="4dp"
     tools:context=".FavoritesFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/text"
+         />
+
     <TextView
         android:id="@id/text"
+        android:background="#e0e0e0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey_color"
         android:paddingTop="16dp"
         android:paddingBottom="4dp"
         android:text="@string/favorites_button"
@@ -22,12 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-        <androidx.recyclerview.widget.RecyclerView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_favorites"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

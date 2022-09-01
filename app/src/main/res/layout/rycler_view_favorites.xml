@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:background="@color/grey_color"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="12dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -11,14 +13,12 @@
         android:id="@+id/eachDescription"
         android:layout_width="match_parent"
         android:gravity="center_vertical"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:drawablePadding="5dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="sans-serif"
         android:textColor="@color/black"
         android:textSize="11sp"
         android:textStyle="normal"
-        app:drawableLeftCompat="@drawable/vector_bus"
+        android:drawableEnd="@drawable/vector_star"
         app:drawableTopCompat="@color/line_color" />
-
-
 </LinearLayout>

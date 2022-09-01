@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity(){
             } else {
                 binding.logInButton.isEnabled = false
                 binding.logInButton.isClickable = false
+                binding.logInButton.text
                 auth.signInWithEmailAndPassword(accountName!!, password!!).addOnSuccessListener {
                     val intent = Intent(this@MainActivity, MainScreenActivity::class.java)
                     startActivity(intent)

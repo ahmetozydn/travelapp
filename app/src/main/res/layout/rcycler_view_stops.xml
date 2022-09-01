@@ -3,23 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginTop="2dp"
-    android:layout_marginEnd="4dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginEnd="8dp"
     android:background="@color/grey_color"
-
     android:orientation="horizontal">
-    <!--   <TextView
-
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/lineName"
-           android:fontFamily="sans-serif-medium"
-           android:layout_margin="2dp"
-           android:textAlignment="center"
-           android:textSize="11sp"
-           android:textColor="@color/black"
-           />-->
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:textAllCaps="false"

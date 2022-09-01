@@ -10,17 +10,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmetozaydin.logindemo.adapter.FavoritesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentFavoritesBinding
-
+private lateinit var layoutManager : RecyclerView.LayoutManager
+private lateinit var favoritesAdapter :FavoritesAdapter
 class FavoritesFragment : Fragment() {
     private lateinit var binding: FragmentFavoritesBinding
     private var databaseList = ArrayList<String>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFavoritesBinding.inflate(layoutInflater)
-
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
+        layoutManager = LinearLayoutManager(requireActivity(),RecyclerView.VERTICAL,false)//requireActivity(), RecyclerView.VERTICAL, false
+        binding.recyclerViewFavorites.layoutManager = layoutManager
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,14 +44,14 @@ class FavoritesFragment : Fragment() {
             databaseList.forEach {
                 println(it)
             }
-            val layoutManager :RecyclerView.LayoutManager
-            layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
-            binding.recyclerViewFavorites.layoutManager = layoutManager
-            val favoritesAdapter = FavoritesAdapter(databaseList)
-            binding.recyclerViewFavorites.adapter = favoritesAdapter
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
+         favoritesAdapter = FavoritesAdapter(databaseList)
+        binding.recyclerViewFavorites.adapter = favoritesAdapter
+
+
 
     }
 
