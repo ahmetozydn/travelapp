@@ -21,6 +21,8 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/navigation_view_colored.xml" value="0.1935" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/password_icon.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/plain_text_background.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/star_selector.xml" value="0.211" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/start_selector.xml" value="0.211" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/text_view_background.xml" value="0.131" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_about_us.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_back.xml" value="0.2345" />
@@ -40,6 +42,7 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_search.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_settings.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_share_the_app.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_star.xml" value="0.211" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_about_us_actvity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_bus_location.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_delete.xml" value="0.25" />
@@ -62,7 +65,7 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_my_card.xml" value="0.2" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_nfc.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/rcycler_view_stops.xml" value="0.264" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/rycler_view_favorites.xml" value="0.4" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/rycler_view_favorites.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/spinner.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu-v26/bottom_navigation_menu.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18382352941176472" />

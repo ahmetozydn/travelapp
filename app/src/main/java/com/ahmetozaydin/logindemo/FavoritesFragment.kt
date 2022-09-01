@@ -1,28 +1,60 @@
 package com.ahmetozaydin.logindemo
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ahmetozaydin.logindemo.adapter.FavoritesAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentFavoritesBinding
-import com.ahmetozaydin.logindemo.databinding.FragmentLocationBinding
-
 
 class FavoritesFragment : Fragment() {
-
-    private lateinit var  binding:FragmentFavoritesBinding
-
+    private lateinit var binding: FragmentFavoritesBinding
+    private var databaseList = ArrayList<String>()
     override fun onCreateView(
-
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFavoritesBinding.inflate(layoutInflater)
-        binding.textView.text =""
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_favorites, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        try {
+            val myDatabase = requireActivity().openOrCreateDatabase(
+                "MyDatabase",
+                Context.MODE_PRIVATE,
+                null
+            )
+            val cursor =
+                myDatabase.rawQuery(("SELECT * FROM descriptions_table"), null)
+            val examplesIx = cursor.getColumnIndex("column_description")
+            while (cursor.moveToNext()) {
+                databaseList.add(cursor.getString(examplesIx))
+            }
+            cursor.close()
+            println(databaseList.size)
+            databaseList.forEach {
+                println(it)
+            }
+            val layoutManager :RecyclerView.LayoutManager
+            layoutManager = LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
+            binding.recyclerViewFavorites.layoutManager = layoutManager
+            val favoritesAdapter = FavoritesAdapter(databaseList)
+            binding.recyclerViewFavorites.adapter = favoritesAdapter
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
 
 }
+
+
+
+

@@ -2,10 +2,9 @@ package com.ahmetozaydin.logindemo.view
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
@@ -15,14 +14,12 @@ import com.ahmetozaydin.logindemo.model.*
 import com.ahmetozaydin.logindemo.service.BusAPI
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import io.reactivex.rxjava3.disposables.CompositeDisposable
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -32,6 +29,7 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityStopsBinding
     private lateinit var location: LatLng
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+   private lateinit var bitmap : Bitmap
 
 
 
@@ -56,6 +54,8 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
         val view = binding.root
         setContentView(view)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+         bitmap =
+            baseContext.let { AppCompatResources.getDrawable(this@Stops,R.drawable.ic_stop)!!.toBitmap() }
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -95,8 +95,7 @@ class Stops : AppCompatActivity(), OnMapReadyCallback {
                             println("longitude : " + stop.longitude)*/
                             location = LatLng(stop.latitude!!,stop.longitude!!)
                             //mMap.addMarker(MarkerOptions().position(location).title("${stop.name}"))
-                            val bitmap =
-                                baseContext.let { AppCompatResources.getDrawable(this@Stops,R.drawable.ic_stop)!!.toBitmap() }
+
                             mMap.addMarker(
                                 MarkerOptions()
                                     .position(location)

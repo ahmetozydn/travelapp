@@ -24,7 +24,6 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:textAllCaps="false"
         android:id="@+id/description"
-
         android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:layout_height="match_parent"

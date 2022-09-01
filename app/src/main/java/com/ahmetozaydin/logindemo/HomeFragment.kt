@@ -1,12 +1,14 @@
 package com.ahmetozaydin.logindemo
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.TextUtils.replace
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import com.ahmetozaydin.logindemo.databinding.FragmentHomeBinding
 import com.ahmetozaydin.logindemo.view.Stops
@@ -18,12 +20,8 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
-
     }
-
     override fun onCreateView(
-
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -33,8 +31,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.stopButton.setOnClickListener{
 
+        binding.stopButton.setOnClickListener{
             val intent = Intent(activity, Stops::class.java)// Because Fragment is NOT of Context type, you'll need to call the parent Activity:
            activity?.startActivity(intent)
 

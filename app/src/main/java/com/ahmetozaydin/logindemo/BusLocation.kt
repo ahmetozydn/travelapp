@@ -36,7 +36,7 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
     private var markerList = ArrayList<Marker>()
     private var marker: Marker? = null
     private var one = 0
-    private lateinit var bitmap : Bitmap
+    private lateinit var bitmap: Bitmap
 
 
     private lateinit var binding: ActivityBusLocationBinding
@@ -58,8 +58,7 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityBusLocationBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-         bitmap =
+        bitmap =
             baseContext.let {
                 AppCompatResources.getDrawable(
                     this@BusLocation,
@@ -97,6 +96,7 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
                     override fun onFailure(call: Call<BusLocationModel>, t: Throwable) {
                         t.printStackTrace()
                     }
+
                     override fun onResponse(
                         call: Call<BusLocationModel>,
                         response: Response<BusLocationModel>
@@ -112,47 +112,49 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
                                     try {
                                         if (one == 0) {
                                             latlngList.add(aLatLong)
-                                        }else{
+                                        } else {
                                             latlngList.forEachIndexed { index, latLng ->
-                                                if(latlngList[index].latitude != newLatLng[index].latitude || latlngList[index].longitude != newLatLng[index].longitude ){
+                                                if (latlngList[index].latitude != newLatLng[index].latitude || latlngList[index].longitude != newLatLng[index].longitude) {
                                                     println(index)
-                                                    println(" $latLng.latitude     "+latLng.longitude)
-                                                    val newPosition = LatLng( newLatLng[index].latitude, newLatLng[index].longitude)
+                                                    println(" $latLng.latitude     " + latLng.longitude)
+                                                    val newPosition = LatLng(
+                                                        newLatLng[index].latitude,
+                                                        newLatLng[index].longitude
+                                                    )
                                                     latlngList[index] = newPosition
                                                 }
                                             }
                                         }
 
-                                    }catch (exception :Exception){
+                                    } catch (exception: Exception) {
                                         exception.printStackTrace()
                                     }
 
 
-                                   /* location = LatLng(bus.latitude, bus.longitude)
+                                    /* location = LatLng(bus.latitude, bus.longitude)
 
-                                    val bitmap =
-                                        baseContext.let {
-                                            AppCompatResources.getDrawable(
-                                                this@BusLocation,
-                                                R.drawable.vector_bus
-                                            )!!.toBitmap()
-                                        }
+                                     val bitmap =
+                                         baseContext.let {
+                                             AppCompatResources.getDrawable(
+                                                 this@BusLocation,
+                                                 R.drawable.vector_bus
+                                             )!!.toBitmap()
+                                         }
 
-                                    mMap.addMarker(
-                                        MarkerOptions()
-                                            .position(location)
-                                            .snippet(
-                                                "${location.latitude}\n" +
-                                                        "${location.latitude}"
-                                            )
-                                            .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
-                                            .title("Bus Location")
-                                    )*/
+                                     mMap.addMarker(
+                                         MarkerOptions()
+                                             .position(location)
+                                             .snippet(
+                                                 "${location.latitude}\n" +
+                                                         "${location.latitude}"
+                                             )
+                                             .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(it) })
+                                             .title("Bus Location")
+                                     )*/
 
 
                                 }
-                                latlngList.forEach {LatLng->
-
+                                latlngList.forEach { LatLng ->
 
 
                                     mMap.addMarker(
@@ -163,7 +165,8 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
                                                         "${LatLng.latitude}"
                                             )
                                             .icon(bitmap.let {
-                                                BitmapDescriptorFactory.fromBitmap(bitmap) })
+                                                BitmapDescriptorFactory.fromBitmap(bitmap)
+                                            })
                                             .title("Bus Location")
                                     )
                                 }
@@ -181,6 +184,7 @@ class BusLocation : AppCompatActivity(), OnMapReadyCallback {
 
         }
         handler.post(runnable)
+
     }
 
     private fun getLastKnownLocation() {

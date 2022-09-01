@@ -7,6 +7,7 @@ import android.location.LocationListener
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -27,13 +28,7 @@ class MainScreenActivity : AppCompatActivity() {
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
     private lateinit var permissionLauncher: ActivityResultLauncher<String>
-    private val favoritesFragment = FavoritesFragment()
-    private val homeFragment = HomeFragment()
-    private val locationFragment = LocationFragment()
-    private val menuFragment = MenuFragment()
-    private val linesFragment = LinesFragment()
-    private val myCardFragment = MyCardFragment()
-    private lateinit var mMap: GoogleMap
+    private var homeFragment = HomeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +40,7 @@ class MainScreenActivity : AppCompatActivity() {
         locationListener = LocationListener { location ->
             println("LOCATION : $location")
             println(location.toString())
-
         }
-
-
-
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -93,11 +84,25 @@ class MainScreenActivity : AppCompatActivity() {
         makeCurrentFragment(homeFragment)
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> makeCurrentFragment(homeFragment)
-                R.id.my_card -> makeCurrentFragment(myCardFragment)
-                R.id.favorites -> makeCurrentFragment(favoritesFragment)
-                R.id.menu -> makeCurrentFragment(menuFragment)
-                R.id.lines -> makeCurrentFragment(linesFragment)
+                R.id.home ->{
+                    makeCurrentFragment(homeFragment)
+                }
+                R.id.my_card -> {
+                    val fragment = MyCardFragment()
+                    makeCurrentFragment(fragment)
+                }
+                R.id.favorites ->  {
+                    val fragment = FavoritesFragment()
+                    makeCurrentFragment(fragment)
+                }
+                R.id.menu -> {
+                    val fragment = MenuFragment()
+                    makeCurrentFragment(fragment)
+                }
+                R.id.lines -> {
+                    val fragment = LinesFragment()
+                    makeCurrentFragment(fragment)
+                }
                 else -> return@setOnItemSelectedListener true
 
             }

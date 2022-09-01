@@ -3,6 +3,7 @@ package com.ahmetozaydin.logindemo.view
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,25 +23,24 @@ import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class LinesToMap : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
-    private lateinit var location: LatLng
-    private  var services: Services? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var binding: ActivityLinesToMapBinding
     private lateinit var bitmap: Bitmap
-
-    private  var point : Point? = null
+    private lateinit var markerPosition: LatLng
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityLinesToMapBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         bitmap =
-            baseContext.let { AppCompatResources.getDrawable(this,R.drawable.ic_stop)!!.toBitmap() }
+            baseContext.let {
+                AppCompatResources.getDrawable(this, R.drawable.ic_stop)!!.toBitmap()
+            }
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -48,47 +48,36 @@ class LinesToMap : AppCompatActivity(), OnMapReadyCallback {
         binding.buttonBack.setOnClickListener {
             finish()
         }
+        binding.star.setOnClickListener {
+        }
     }
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         getLastKnownLocation()
         val lineName = intent.getStringExtra("line_name")
-         binding.textviewTitle.text = lineName
-     val  services = intent.getParcelableExtra<Services>("Service")
+        binding.textViewTitle.text = lineName
+        val services = intent.getParcelableExtra<Services>("Service")
         services?.routes?.forEach {
-
             it.points?.forEach { point ->
-                    if(point.stopID != null){
-                        val markerPosition = LatLng(point.latitude,point.longitude)
-
-
-                        mMap.addMarker(MarkerOptions()
+                if (point.stopID != null) {
+                    markerPosition = LatLng(point.latitude, point.longitude)
+                    mMap.addMarker(
+                        MarkerOptions()
                             .position(markerPosition)
                             .title(point.stopID)
-                            .icon(bitmap.let{BitmapDescriptorFactory.fromBitmap(bitmap)})
-                        )
-                    }
-
-
-
+                            .icon(bitmap.let { BitmapDescriptorFactory.fromBitmap(bitmap) })
+                    )
+                }
             }
         }
-        println("hello world")
+        /* val serviceList : ArrayList<Services>?  = intent.getParcelableExtra("arraylist")
 
-
-
-       /* val serviceList : ArrayList<Services>?  = intent.getParcelableExtra("arraylist")
-
-        if (serviceList != null) {
-            for (servicess:Services in serviceList){
-                println( servicess.name)
-            }
-        }*/
-
-
+         if (serviceList != null) {
+             for (servicess:Services in serviceList){
+                 println( servicess.name)
+             }
+         }*/
     }
-
     private fun getLastKnownLocation() {
 
         if (ActivityCompat.checkSelfPermission(
@@ -99,7 +88,6 @@ class LinesToMap : AppCompatActivity(), OnMapReadyCallback {
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-
             return
         }
         fusedLocationClient.lastLocation

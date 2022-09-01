@@ -32,7 +32,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textview_title"
+            android:id="@+id/textViewTitle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:textAlignment="center"
@@ -47,8 +47,9 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_weight="2"
+
             android:layout_height="match_parent"
-            android:drawableRight="@drawable/vector_star" />
+            android:drawableRight="@drawable/star_selector" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
@@ -63,3 +64,4 @@
         tools:context=".view.Stops" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

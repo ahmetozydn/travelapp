@@ -10,7 +10,4 @@ import retrofit2.http.PUT
 interface BusLocationsAPI {
         @GET("vehicle_locations")
         fun getData() : Call<BusLocationModel>
-        @PUT("vehicle_locations")
-        fun postData() : Call<BusLocationModel>
-
 }
