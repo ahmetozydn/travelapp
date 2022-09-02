@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
     >
     <item
-
-
         android:id="@+id/home"
         android:enabled="true"
         android:icon="@drawable/vector_home"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-thin"
         android:title="@string/home_button" />
     <item
         android:id="@+id/lines"
         android:enabled="true"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_bus2"
         android:title="@string/lines_text" />
     <item
         android:id="@+id/my_card"
         android:enabled="true"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_card"
         android:title="@string/card_button" />
 
     <item
         android:id="@+id/favorites"
         android:enabled="true"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_favorites"
         android:title="@string/favorites_button" />
 
@@ -37,7 +32,7 @@
     <item
         android:id="@+id/menu"
         android:enabled="true"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_menu"
         android:title="@string/menu_button" />
 

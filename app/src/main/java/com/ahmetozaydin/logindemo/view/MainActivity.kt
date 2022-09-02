@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.ahmetozaydin.logindemo.MenuFragment
-import com.ahmetozaydin.logindemo.R
 import com.ahmetozaydin.logindemo.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -97,14 +95,7 @@ class MainActivity : AppCompatActivity(){
                     }
             }
         }
-
-
-
-
     }
-
-
-
 }
 
 

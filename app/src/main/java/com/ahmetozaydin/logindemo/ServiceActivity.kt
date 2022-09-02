@@ -17,7 +17,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -118,11 +117,12 @@ class ServiceActivity : AppCompatActivity(), OnMapReadyCallback {
                                 //pointList = ArrayList()
 
 
-                                /*for (services: Services in serviceList!!) {
+for (services: Services in serviceList!!) {
 
                                     println(services.name)
                                     println("hello world")
-                                }*/
+                                }
+
                             }
                             //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location!!,100f))
                         }

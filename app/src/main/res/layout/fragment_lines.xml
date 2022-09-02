@@ -8,7 +8,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:scrollbarSize="3dp"
         android:layout_width="match_parent"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:background="@color/white"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

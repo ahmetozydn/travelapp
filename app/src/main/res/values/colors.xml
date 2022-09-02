@@ -19,5 +19,7 @@
     <color name="color_grey">#424242</color>
     <color name="color_green">#e6ee9c</color>
     <color name="orange">#FFB300</color>
+    <color name="color_light_blue">#E0F7FA</color>
+    <color name = "color_alternative_green">#F9FBE7</color>
 </resources>
 

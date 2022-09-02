@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/grey_color"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
     android:layout_marginTop="8dp"
     android:layout_marginStart="12dp"
+    android:background="@drawable/recycler_view_button_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:textAllCaps="false"
         android:id="@+id/eachDescription"
+
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
-        android:gravity="center_vertical"
         android:layout_height="wrap_content"
+        app:circularflow_radiusInDP="8dp"
+        android:drawableEnd="@drawable/vector_star"
         android:drawablePadding="5dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="11sp"
         android:textStyle="normal"
-        android:drawableEnd="@drawable/vector_star"
-        app:drawableTopCompat="@color/line_color" />
-</LinearLayout>
+        app:drawableTopCompat="@color/line_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

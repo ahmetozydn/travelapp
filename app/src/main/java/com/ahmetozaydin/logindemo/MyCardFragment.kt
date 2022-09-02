@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import com.ahmetozaydin.logindemo.adapter.TabLayoutAdapter
 import com.ahmetozaydin.logindemo.databinding.FragmentMyCardBinding
 import com.ahmetozaydin.logindemo.fragments.CardIdFragment
@@ -17,7 +19,6 @@ class MyCardFragment : Fragment() {
     private lateinit var binding:FragmentMyCardBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +41,14 @@ class MyCardFragment : Fragment() {
       /*  tabLayout.getTabAt(0)?.setIcon(R.drawable.vector_card)
         tabLayout.getTabAt(1)?.setIcon(R.drawable.vector_card)
 */
+    }
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)?.supportActionBar?.hide()
+    }
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)?.supportActionBar?.show()
     }
 
 

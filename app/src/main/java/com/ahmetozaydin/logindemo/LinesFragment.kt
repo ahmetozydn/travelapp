@@ -3,7 +3,6 @@ package com.ahmetozaydin.logindemo
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,9 +16,8 @@ import com.ahmetozaydin.logindemo.model.ServiceModel
 import com.ahmetozaydin.logindemo.model.Services
 import com.ahmetozaydin.logindemo.service.ServiceAPI
 import com.ahmetozaydin.logindemo.view.LinesToMap
+import com.ahmetozaydin.logindemo.view.Stops.Companion.BASE_URL
 import kotlinx.android.synthetic.main.rcycler_view_stops.view.*
-import kotlinx.android.synthetic.main.rycler_view_favorites.*
-import kotlinx.android.synthetic.main.rycler_view_favorites.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -53,7 +51,7 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
 
     private fun fetchData() {
         val retrofit = Retrofit.Builder()
-            .baseUrl(ServiceActivity.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val service = retrofit.create(ServiceAPI::class.java)
@@ -77,19 +75,20 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                             //servicesList.add(services.name.toString())
                             // servicesList = ArrayList<Services>()
                             servicesList.add(services)
-                            linesAdapter = LinesAdapter(servicesList, this@LinesFragment)
-                            binding.recyclerView.adapter = linesAdapter
-                            context?.let {
-                                createSwipeGesture(
-                                    it.applicationContext,
-                                    binding.recyclerView
-                                )
-                            }//burası patlatabilir belki
-                            /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-                              val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
-                              binding.recyclerView.adapter = adapter*/
 
-                        }
+                        }//burası patlatabilir belki
+                        /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+                          val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
+                          binding.recyclerView.adapter = adapter*/
+                    }
+
+                    linesAdapter = LinesAdapter(servicesList, this@LinesFragment)
+                    binding.recyclerView.adapter = linesAdapter
+                    context?.let {
+                        createSwipeGesture(
+                            it.applicationContext,
+                            binding.recyclerView
+                        )
                         /*   serviceModel.services?.forEach { services ->
                                services.routes?.forEach { route ->
                                    route.points?.forEach { point ->
@@ -172,3 +171,4 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
         touchHelper.attachToRecyclerView(recyclerView)
     }
 }
+

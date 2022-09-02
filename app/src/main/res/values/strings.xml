@@ -52,7 +52,7 @@
     <string name="Show_the_Balance">Show the Balance</string>
     <string name="string_back">Back</string>
     <string name="query_with_nfc">NFC</string>
-    <string name="card_ıd">CARD ID</string>
+    <string name="card_ıd"><font size = "16">CARD ID</font></string>
 
 </resources>
 
