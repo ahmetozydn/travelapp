@@ -3,7 +3,6 @@ package com.ahmetozaydin.logindemo.view
 import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.content.res.AppCompatResources
@@ -11,19 +10,15 @@ import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.ahmetozaydin.logindemo.R
 import com.ahmetozaydin.logindemo.databinding.ActivityLinesToMapBinding
-import com.ahmetozaydin.logindemo.model.Point
 import com.ahmetozaydin.logindemo.model.Services
-import com.google.android.gms.dynamic.IObjectWrapper
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class LinesToMap : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap

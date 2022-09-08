@@ -20,21 +20,16 @@
         android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_card"
         android:title="@string/card_button" />
-
     <item
         android:id="@+id/favorites"
         android:enabled="true"
         android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_favorites"
         android:title="@string/favorites_button" />
-
-
     <item
         android:id="@+id/menu"
         android:enabled="true"
         android:fontFamily="sans-serif-thin"
         android:icon="@drawable/vector_menu"
         android:title="@string/menu_button" />
-
-
 </menu>

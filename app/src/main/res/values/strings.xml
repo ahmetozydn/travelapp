@@ -26,6 +26,7 @@
     <string name="about_us_button">About Us</string>
     <string name="rate_us_button">Rate Us</string>
     <string name="buses_button">Buses</string>
+    <string name="string_nfc">Nfc</string>
     <string name="stations_button">Stations</string>
     <string name="welcome_string">Welcome!</string>
     <string name="Profile">profile_text</string>
@@ -52,7 +53,10 @@
     <string name="Show_the_Balance">Show the Balance</string>
     <string name="string_back">Back</string>
     <string name="query_with_nfc">NFC</string>
-    <string name="card_ıd"><font size = "16">CARD ID</font></string>
+    <string name="card_ıd"><font size="16">CARD ID</font></string>
+    <string name="card_reader">Card Reader</string>
+    <string name="show_the_card_info">Show the Card Info</string>
+
 
 </resources>
 

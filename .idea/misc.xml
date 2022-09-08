@@ -5,16 +5,20 @@
       <map>
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.132" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/account_name_icon.xml" value="0.1" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/bg.xml" value="0.2125" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.1935" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button.xml" value="0.2245" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button_background.xml" value="0.132" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button_background_colorful.xml" value="0.274" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/button_background_low_radius.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/custom_button_background.xml" value="0.1935" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/edit_text_background.xml" value="0.1785" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/edit_text_top.xml" value="0.213" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_nfc.xml" value="0.2095" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/ic_stop.xml" value="0.211" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/login_vector_asset.xml" value="0.1785" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/mail_icon.xml" value="0.1" />
@@ -45,18 +49,22 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_share_the_app.xml" value="0.1" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_star.xml" value="0.211" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_stop.xml" value="0.2245" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/drawable/vector_user_location.xml" value="0.212" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_about_us_actvity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_bus_location.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_delete.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_lines_to_map.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_lines_to_map2.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main_screen.xml" value="0.4" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_main_screen.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_maps_would_delete.xml" value="0.25" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_nfc_reader.xml" value="0.264" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_nfcmain_acitivity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_service.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_stop.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_stops.xml" value="0.25" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_stops_map.xml" value="0.25" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/activity_write_data.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_card_id.xml" value="0.176" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_favorites.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/fragment_home.xml" value="0.264" />
@@ -70,9 +78,10 @@
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/rycler_view_favorites.xml" value="0.4" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/layout/spinner.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu-v26/bottom_navigation_menu.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18382352941176472" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.264" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1745" />
         <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.132" />
+        <entry key="..\:/Users/ahmet/AndroidStudioProjects/LoginDemo/app/src/main/res/xml/nfc_tech_filter.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

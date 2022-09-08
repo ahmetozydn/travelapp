@@ -22,5 +22,4 @@ class TabLayoutAdapter (supportFragmentManager: FragmentManager) : FragmentPager
         mFragmentList.add(fragment)
         mFragmentTitleList.add(title)
     }
-
 }

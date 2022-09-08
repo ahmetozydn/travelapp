@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:scrollbarSize="4dp"
     tools:context=".FavoritesFragment">
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_favorites"
         android:scrollbars="vertical"

@@ -1,7 +1,10 @@
 package com.ahmetozaydin.logindemo.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Stop(
-    val atco_code: String?,
+    @SerializedName("atco_code")
+    val atcoCode: String?,
     val atco_latitude: Double?,
     val atco_longitude: Double?,
     val destinations: List<String?>?,

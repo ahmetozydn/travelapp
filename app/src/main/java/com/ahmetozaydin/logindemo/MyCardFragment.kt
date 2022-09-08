@@ -37,7 +37,6 @@ class MyCardFragment : Fragment() {
         adapter.addFragment(NFCFragment(),"NFC")
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-
       /*  tabLayout.getTabAt(0)?.setIcon(R.drawable.vector_card)
         tabLayout.getTabAt(1)?.setIcon(R.drawable.vector_card)
 */
@@ -50,6 +49,4 @@ class MyCardFragment : Fragment() {
         super.onStop()
         (activity as AppCompatActivity?)?.supportActionBar?.show()
     }
-
-
 }

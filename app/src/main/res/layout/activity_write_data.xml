@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.NFCFragment">
-
+    android:background="@drawable/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/input_group"
-        android:layout_alignParentTop="true"
+        android:orientation="vertical"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/input_group">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,7 +20,7 @@
             android:fontFamily="sans-serif"
             android:text="Write NFC Data"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="20sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +28,7 @@
             android:fontFamily="sans-serif"
             android:text="Enter the text in the below text box and bring the nfc tag near!"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
@@ -43,61 +36,56 @@
         android:id="@+id/input_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
 
 
         <EditText
-            android:id="@+id/txtshopid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text_top"
             android:hint="Shop ID"
+            android:id="@+id/txtshopid"
+            android:layout_marginBottom="10dp"
             android:inputType="textPersonName"
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/txtmachineid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text_top"
             android:hint="Machine ID"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtmachineid"
             android:inputType="textPersonName"
             android:padding="15dp" />
 
 
         <Button
-            android:id="@+id/btnback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/button"
             android:foreground="?android:attr/selectableItemBackground"
-            android:text="Read NFC!"
+            android:text="Write NFC!"
             android:textAllCaps="false"
+            android:id="@+id/btnback"
             android:textColor="#0099ff"
-            android:textSize="17sp" />
+            android:textSize="17sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Testing Purposes"
             android:textAlignment="textEnd"
+            android:text="Testing Purposes"
             android:textColor="#FFFFFF"
-            android:textSize="13sp" />
+            android:textSize="13sp"/>
 
     </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

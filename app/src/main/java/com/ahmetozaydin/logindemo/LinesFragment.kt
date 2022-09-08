@@ -17,6 +17,7 @@ import com.ahmetozaydin.logindemo.model.Services
 import com.ahmetozaydin.logindemo.service.ServiceAPI
 import com.ahmetozaydin.logindemo.view.LinesToMap
 import com.ahmetozaydin.logindemo.view.Stops.Companion.BASE_URL
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.rcycler_view_stops.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -62,7 +63,6 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                 t.printStackTrace()
                 println("an error occurred")
             }
-
             override fun onResponse(
                 call: Call<ServiceModel>,
                 response: Response<ServiceModel>
@@ -81,7 +81,6 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                           val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
                           binding.recyclerView.adapter = adapter*/
                     }
-
                     linesAdapter = LinesAdapter(servicesList, this@LinesFragment)
                     binding.recyclerView.adapter = linesAdapter
                     context?.let {
@@ -134,7 +133,7 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                                 Context.MODE_PRIVATE
                             )!!*/
                             //val isExecuted = sharedPreferences.getBoolean("isExecuted", true)
-                            // val rowName = services.description?.replace("'", "''")
+                           //  val rowName = services.description?.replace("'", "''")TODO()
                             myDatabase.execSQL("INSERT INTO descriptions_table(column_description) VALUES ('${viewHolder.itemView.description.text}')")//TODO
                             //sharedPreferences.edit().putBoolean("isExecuted", false).apply()
                             val cursor =

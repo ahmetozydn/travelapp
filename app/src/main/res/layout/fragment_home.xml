@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
-    android:background="#F1EAEA"
     tools:context=".view.MainScreenActivity">
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
@@ -18,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img" />
-
     <EditText
         android:id="@+id/editTextSearch"
         android:layout_width="237dp"
@@ -29,7 +26,6 @@
         android:background="@drawable/button_background_low_radius"
         android:drawableLeft="@drawable/vector_search"
         android:ems="10"
-
         android:hint="@string/search_button"
         android:inputType="textPersonName"
         android:paddingStart="4dp"
@@ -41,7 +37,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
   />
-
     <androidx.gridlayout.widget.GridLayout
         android:layout_marginBottom="90dp"
         android:id="@+id/gridLayout"
@@ -51,7 +46,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:orientation="horizontal">
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/busLocations"
             android:layout_width="match_parent"
@@ -63,17 +57,14 @@
             android:padding="1dp"
             android:text="@string/bus_location_button"
             android:fontFamily="sans-serif"
-
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="0"
             app:layout_row="0"
-
             />
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_buses"
+            android:id="@+id/buttonNfc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
@@ -82,16 +73,13 @@
             android:padding="1dp"
             android:fontFamily="sans-serif"
             app:layout_rowSpan="2"
-            android:text="@string/buses_button"
+            android:text="@string/string_nfc"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_column="1"
             app:layout_row="0"
-
-
             />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/stopButton"
             android:layout_width="match_parent"
