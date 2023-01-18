@@ -10,11 +10,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/eachDescription"
-
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:circularflow_radiusInDP="8dp"
+        android:maxLines="1"
         android:drawableEnd="@drawable/vector_star"
         android:drawablePadding="5dp"
         android:fontFamily="sans-serif-medium"

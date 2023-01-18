@@ -14,7 +14,6 @@ class FavoritesAdapter(private val databaseList: ArrayList<String>) : RecyclerVi
         return PlaceHolder(binding)
     }
     override fun onBindViewHolder(holder: PlaceHolder, position: Int) {
-        //holder.itemView.eachDescription.text = databaseList[position]
         holder.binding.eachDescription.text = databaseList[position]
     }
     override fun getItemCount(): Int {

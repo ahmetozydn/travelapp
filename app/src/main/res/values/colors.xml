@@ -21,5 +21,6 @@
     <color name="orange">#FFB300</color>
     <color name="color_light_blue">#E0F7FA</color>
     <color name = "color_alternative_green">#F9FBE7</color>
+    <color name = "color_blue">#039BE5</color>
 </resources>
 

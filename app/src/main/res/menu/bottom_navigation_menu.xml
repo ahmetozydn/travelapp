@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
         android:enabled="true"
@@ -18,13 +16,13 @@
         android:id="@+id/my_card"
         android:enabled="true"
         android:fontFamily="sans-serif-thin"
-        android:icon="@drawable/vector_card"
-        android:title="@string/card_button" />
+        android:icon="@drawable/vector_location"
+        android:title="@string/location_button" />
     <item
         android:id="@+id/favorites"
         android:enabled="true"
         android:fontFamily="sans-serif-thin"
-        android:icon="@drawable/vector_favorites"
+        android:icon="@drawable/ic_star"
         android:title="@string/favorites_button" />
     <item
         android:id="@+id/menu"

@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:drawablePadding="5dp"
         android:fontFamily="sans-serif"
+        android:maxLines="1"
         android:textColor="@color/black"
         android:textSize="11sp"
         app:drawableLeftCompat="@drawable/vector_bus"

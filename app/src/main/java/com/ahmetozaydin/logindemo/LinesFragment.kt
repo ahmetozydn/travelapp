@@ -43,13 +43,11 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerView.layoutManager = layoutManager
         fetchData()
     }
-
     private fun fetchData() {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -58,7 +56,6 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
         val service = retrofit.create(ServiceAPI::class.java)
         val call = service.loadData()
         call.enqueue(object : Callback<ServiceModel> {
-
             override fun onFailure(call: Call<ServiceModel>, t: Throwable) {
                 t.printStackTrace()
                 println("an error occurred")
@@ -74,9 +71,8 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                             //val servicesList = arrayListOf(services.name)
                             //servicesList.add(services.name.toString())
                             // servicesList = ArrayList<Services>()
-                            servicesList.add(services)
-
-                        }//burası patlatabilir belki
+                            servicesList.add(services)//TODO
+                        }
                         /*  binding.recyclerView.layoutManager = LinearLayoutManager(activity)
                           val adapter = LinesAdapter(servicesList,this@LinesFragment)//?
                           binding.recyclerView.adapter = adapter*/
@@ -104,6 +100,7 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                                }
                            }*/
                     }
+                    getBusInfo()
                 }
             }
         })
@@ -112,10 +109,10 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
     override fun onItemClick(services: Services) {
         val intent = Intent(activity, LinesToMap::class.java)
         intent.putExtra("line_name", services.description)
+        intent.putExtra("line_id", services.name)
         intent.putExtra("Service", services)
         startActivity(intent)
     }
-
     fun createSwipeGesture(context: Context, recyclerView: RecyclerView) {
         val swipeGestures = object : SwipeGestures(context) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -147,9 +144,6 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
                             }
                             cursor.close()
                             println(databaseList.size)
-                            databaseList.forEach {
-                                println(it)
-                            }
                             //databaseList.add(viewHolder.itemView.description.text.toString())
                             /* bundle.putStringArrayList("databaseList",databaselist)
                              parentFragmentManager.setFragmentResult("data",bundle)
@@ -168,6 +162,10 @@ class LinesFragment : Fragment(), LinesAdapter.Listener {
         }
         val touchHelper = ItemTouchHelper(swipeGestures)
         touchHelper.attachToRecyclerView(recyclerView)
+
+    }
+    fun getBusInfo(){
+
     }
 }
 

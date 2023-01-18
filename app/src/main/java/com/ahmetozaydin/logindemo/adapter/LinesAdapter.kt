@@ -12,19 +12,15 @@ class LinesAdapter(private val serviceList: List<Services>, private val listener
     interface Listener{
         fun onItemClick(services: Services)//service : Service de alabilir.
     }
-
     class PlaceHolder( val binding: RcyclerViewStopsBinding ): RecyclerView.ViewHolder(binding.root){
-
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceHolder {// layout ile bağlama işlemi, view binding ile
         val binding = RcyclerViewStopsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return PlaceHolder(binding)
-
     }
-
     override fun onBindViewHolder(holder: PlaceHolder, position: Int) {//bağlamadan sonraki kısım,hangi item ne verisi gösterecek.
         // holder.binding.lineName.text = serviceList[position].name.toString()
-        holder.binding.description.text = serviceList[position].description.toString()
+        holder.binding.description.text = serviceList[position].description.toString()+" - " + serviceList[position].name.toString()
         holder.binding.description.setOnClickListener{
             listener.onItemClick(serviceList[position])
         }

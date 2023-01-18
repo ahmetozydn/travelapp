@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_light_blue"
+    android:elevation="4dp"
+    android:textAlignment="center"
+    >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/vector_back"
+        android:id="@+id/back_button"
+        android:textAllCaps="false"
+        android:textColor="#0356FC"
+        style="?android:attr/borderlessButtonStyle"
+        />
+    <TextView
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/stops_button"
+        android:textSize="20sp"
+        android:textColor="#0356FC"
+        />
+</androidx.appcompat.widget.Toolbar>

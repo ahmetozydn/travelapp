@@ -9,13 +9,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.ahmetozaydin.logindemo.*
 import com.ahmetozaydin.logindemo.databinding.ActivityMainScreenBinding
 import com.google.android.material.snackbar.Snackbar
-import com.google.type.Color
 import kotlinx.android.synthetic.main.activity_main_screen.view.*
 
 
@@ -37,42 +37,9 @@ class MainScreenActivity : AppCompatActivity() {
         locationListener = LocationListener { location ->
             println("LOCATION : $location")
             println(location.toString())
+            onStatusChanged()
         }
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(
-                    this,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                )
-            ) { // android decides here
-                Snackbar.make(
-                    binding.root,
-                    "Permission needed for location",
-                    Snackbar.LENGTH_INDEFINITE
-                ).setAction("Give Permission") {
-                    //request permission
-                    permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-                }.show()
-            } else {
-                //request permission
-                permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-            }
-            return
-        } else {
-            //permission granted
-            locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER,
-                1,
-                2f,
-                locationListener
-            )
-        }
+
         makeCurrentFragment(homeFragment)
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -81,9 +48,10 @@ class MainScreenActivity : AppCompatActivity() {
                     binding.myToolbar.visibility = View.GONE
                 }
                 R.id.my_card -> {
-                    val fragment = MyCardFragment()
+                    val fragment = LocationFragment()
                     makeCurrentFragment(fragment)
-                    binding.myToolbar.visibility = View.GONE
+                    binding.myToolbar.visibility = View.VISIBLE
+                    binding.myToolbar.text_view_inside_toolbar.text = "Location"
                 }
                 R.id.favorites -> {
                     val fragment = FavoritesFragment()
@@ -143,5 +111,46 @@ class MainScreenActivity : AppCompatActivity() {
                 }
 
             }
+    }
+    fun onProviderEnabled(@NonNull provider: String?) {}
+
+    fun onProviderDisabled(@NonNull provider: String?) {}
+
+    private fun onStatusChanged() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            ) { // android decides here
+                Snackbar.make(
+                    binding.root,
+                    "Permission needed for location",
+                    Snackbar.LENGTH_INDEFINITE
+                ).setAction("Give Permission") {
+                    //request permission
+                    permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+                }.show()
+            } else {
+                //request permission
+                permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
+            }
+            return
+        } else {
+            //permission granted
+            locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                1,
+                2f,
+                locationListener
+            )
+        }
     }
 }
